@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Bangers, Cinzel, Inter } from "next/font/google";
 import { LocaleProvider } from "@/components/locale-context";
 import { SiteJsonLd } from "@/components/site-json-ld";
@@ -91,6 +92,7 @@ export default async function RootLayout({
         <LocaleProvider locale={locale} messages={messages}>
           {children}
         </LocaleProvider>
+        <Analytics />
       </body>
     </html>
   );

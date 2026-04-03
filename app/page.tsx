@@ -11,6 +11,7 @@ import {
   rowsByEffectForTrinity,
 } from "@/lib/sanity/group-products";
 import { PoweredBy } from "@/components/powered-by";
+import { QuoteRotator } from "@/components/quote-rotator";
 import { getLocale, getMessages } from "@/lib/i18n";
 import { NP_INFO_EMAIL, NP_INFO_MAILTO } from "@/lib/site-contact";
 
@@ -46,8 +47,12 @@ export default async function Home() {
 
         <div className="np-quote-strip">
           <div className="np-quote-panel">
-            <p className="np-quote-text">{h.quote}</p>
-            <p className="np-quote-attr">{h.quoteAttr}</p>
+            <QuoteRotator
+              quotes={h.rotatingQuotes}
+              attribution={h.quoteAttr}
+              carouselAria={h.quoteCarouselAria}
+              dotsLabel={h.quoteDotsLabel}
+            />
           </div>
         </div>
 

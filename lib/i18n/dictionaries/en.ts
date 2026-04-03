@@ -61,8 +61,16 @@ export const en: Messages = {
     },
   },
   home: {
-    quote: "The shadows don't hide me, they answer to me.",
+    rotatingQuotes: [
+      "The shadows don't hide me, they answer to me.",
+      "They fear what they cannot see. I become it.",
+      "I didn't step into the night to hide. I stepped in to take control.",
+      "Some wait for the dawn. I rule the dusk.",
+      "The night doesn't swallow me—it unleashes me.",
+    ],
     quoteAttr: "— Night Phantom · Untamed Spirit",
+    quoteCarouselAria: "Night Phantom quotes",
+    quoteDotsLabel: "Choose a quote",
     storyLabel: "Universe",
     storyTitle: "Story",
     storyBody:

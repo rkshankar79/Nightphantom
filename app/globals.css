@@ -43,6 +43,10 @@ html {
   .hero-cta-link {
     transition-duration: 0.01ms !important;
   }
+
+  .np-quote-text--rotator {
+    animation: none;
+  }
 }
 
 body {
@@ -1168,6 +1172,81 @@ a.trinity-product-link:hover {
   margin: 1.35rem 0 0;
   text-transform: uppercase;
   line-height: 1.5;
+}
+
+.np-quote-carousel-sr-title {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.np-quote-rotator {
+  position: relative;
+}
+
+.np-quote-rotator-viewport {
+  min-height: clamp(10rem, 28vw, 14rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.np-quote-text--rotator {
+  animation: np-quote-rotator-in 0.7s ease-out both;
+}
+
+@keyframes np-quote-rotator-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.np-quote-dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.np-quote-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(125, 211, 252, 0.35);
+  background: transparent;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.np-quote-dot:hover {
+  border-color: rgba(125, 211, 252, 0.65);
+  transform: scale(1.15);
+}
+
+.np-quote-dot.is-active {
+  background: rgba(125, 211, 252, 0.75);
+  border-color: rgba(167, 139, 250, 0.5);
+}
+
+.np-quote-dot:focus-visible {
+  outline: 2px solid rgba(196, 181, 253, 0.9);
+  outline-offset: 3px;
 }
 
 /* Products stub */

@@ -47,8 +47,11 @@ export type Messages = {
     >;
   };
   home: {
-    quote: string;
+    /** Cycled in the quote strip card */
+    rotatingQuotes: string[];
     quoteAttr: string;
+    quoteCarouselAria: string;
+    quoteDotsLabel: string;
     storyLabel: string;
     storyTitle: string;
     storyBody: string;

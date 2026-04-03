@@ -61,8 +61,16 @@ export const es: Messages = {
     },
   },
   home: {
-    quote: "Las sombras no me esconden, me obedecen.",
+    rotatingQuotes: [
+      "Las sombras no me esconden, me obedecen.",
+      "Temen lo que no pueden ver. Yo me convierto en eso.",
+      "No entré en la noche para esconderme. Entré para tomar el control.",
+      "Algunos esperan el amanecer. Yo gobierno el anochecer.",
+      "La noche no me traga: me desata.",
+    ],
     quoteAttr: "— Night Phantom · Espíritu indomable",
+    quoteCarouselAria: "Citas de Night Phantom",
+    quoteDotsLabel: "Elegir una cita",
     storyLabel: "Universo",
     storyTitle: "Historia",
     storyBody:

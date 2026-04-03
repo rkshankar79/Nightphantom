@@ -3,8 +3,12 @@ import { AgeGate } from "@/components/age-gate";
 import { CharacterHero } from "@/components/character-hero";
 import { SiteNav } from "@/components/site-nav";
 import { TrinityCards } from "@/components/trinity-cards";
+import { getTrinityProducts } from "@/lib/sanity/fetch";
+import { groupProductsByEffect } from "@/lib/sanity/group-products";
 
-export default function Home() {
+export default async function Home() {
+  const trinityProducts = await getTrinityProducts();
+  const productsByEffect = groupProductsByEffect(trinityProducts);
   return (
     <>
       <a className="skip-link" href="#main-content">
@@ -16,7 +20,7 @@ export default function Home() {
       <main id="main-content" tabIndex={-1}>
         <CharacterHero />
 
-        <TrinityCards />
+        <TrinityCards productsByEffect={productsByEffect} />
 
         <div className="np-quote-strip">
           <div className="np-quote-panel">

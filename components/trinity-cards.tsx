@@ -1,16 +1,19 @@
 "use client";
 
+import Link from "next/link";
 import { useCallback, useId, useState } from "react";
+import type { TrinityProductLine } from "@/lib/sanity/fetch";
+import type { ProductsByEffect, TrinityPowerId } from "@/lib/sanity/types";
 
-type PowerId = "dawn" | "twilight" | "dusk";
+export type { TrinityPowerId as PowerId };
 
 const POWERS: {
-  id: PowerId;
+  id: TrinityPowerId;
   title: string;
   type: string;
   focus: string;
   theme: "trinity-dawn" | "trinity-twilight" | "trinity-dusk";
-  formats: readonly string[];
+  fallbackLabels: readonly string[];
 }[] = [
   {
     id: "dawn",
@@ -18,7 +21,7 @@ const POWERS: {
     type: "Sativa",
     focus: "Energy · Focus · Rising",
     theme: "trinity-dawn",
-    formats: ["Dawn flower", "Dawn pre-roll", "Dawn vape"],
+    fallbackLabels: ["Dawn flower", "Dawn pre-roll", "Dawn vape"],
   },
   {
     id: "twilight",
@@ -26,7 +29,7 @@ const POWERS: {
     type: "Hybrid",
     focus: "Balance · Creativity · Flow",
     theme: "trinity-twilight",
-    formats: ["Twilight flower", "Twilight pre-roll", "Twilight vape"],
+    fallbackLabels: ["Twilight flower", "Twilight pre-roll", "Twilight vape"],
   },
   {
     id: "dusk",
@@ -34,15 +37,19 @@ const POWERS: {
     type: "Indica",
     focus: "Rest · Recovery · The night",
     theme: "trinity-dusk",
-    formats: ["Dusk flower", "Dusk pre-roll", "Dusk vape"],
+    fallbackLabels: ["Dusk flower", "Dusk pre-roll", "Dusk vape"],
   },
 ];
 
-export function TrinityCards() {
-  const [openId, setOpenId] = useState<PowerId | null>(null);
+type Props = {
+  productsByEffect: ProductsByEffect;
+};
+
+export function TrinityCards({ productsByEffect }: Props) {
+  const [openId, setOpenId] = useState<TrinityPowerId | null>(null);
   const sectionLabelId = useId();
 
-  const toggle = useCallback((id: PowerId) => {
+  const toggle = useCallback((id: TrinityPowerId) => {
     setOpenId((cur) => (cur === id ? null : id));
   }, []);
 
@@ -66,6 +73,7 @@ export function TrinityCards() {
         <div className="trinity-grid" role="list">
           {POWERS.map((p) => {
             const expanded = openId === p.id;
+            const cms = productsByEffect[p.id]?.filter(Boolean) ?? [];
             return (
               <div
                 key={p.id}
@@ -97,9 +105,21 @@ export function TrinityCards() {
                   className={`trinity-panel ${expanded ? "is-open" : ""}`}
                 >
                   <ul className="trinity-sku-list">
-                    {p.formats.map((line) => (
-                      <li key={line}>{line}</li>
-                    ))}
+                    {cms.length > 0
+                      ? cms.map((item) => (
+                          <li key={item._id}>
+                            <Link
+                              href={`/products/${item.slug}`}
+                              className="trinity-product-link"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              {item.listingLabel}
+                            </Link>
+                          </li>
+                        ))
+                      : p.fallbackLabels.map((line) => (
+                          <li key={line}>{line}</li>
+                        ))}
                   </ul>
                   <a className="trinity-find-btn" href="#stores">
                     Find in store

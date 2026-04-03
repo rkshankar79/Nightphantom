@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { AgeGate } from "@/components/age-gate";
 import { CharacterHero } from "@/components/character-hero";
 import { SiteNav } from "@/components/site-nav";
@@ -54,14 +55,21 @@ export default async function Home() {
             Licensed dispensaries only. We don&apos;t sell online — ask your budtender for
             Night Phantom.
           </p>
-          <a
-            className="btn-ghost"
-            href="https://nightphantomhq.com/shop/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Visit shop site
-          </a>
+          <div className="cta-contact-block">
+            <p className="cta-phone-wrap">
+              <a className="cta-phone" href="tel:+12179633013">
+                217-963-3013
+              </a>
+            </p>
+            <p className="cta-facility">
+              <span className="cta-facility-name">Indus365 Grow LLC</span>
+              <br />
+              Harristown, IL
+            </p>
+          </div>
+          <Link className="btn-ghost" href="/contact">
+            Contact us
+          </Link>
         </section>
 
         <footer className="np-footer">

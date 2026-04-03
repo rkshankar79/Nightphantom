@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useCallback, useState } from "react";
 
 type NavLink =
@@ -11,7 +12,7 @@ const links: NavLink[] = [
   { href: "/vape-tech", label: "Vape tech" },
   { href: "#story", label: "Story" },
   { href: "#stores", label: "Stores" },
-  { href: "https://nightphantomhq.com/shop/", label: "Shop", external: true },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function SiteNav() {
@@ -22,9 +23,9 @@ export function SiteNav() {
   return (
     <>
       <nav className="np-nav" aria-label="Primary">
-        <a className="np-nav-logo" href="#hero" onClick={close} aria-label="Night Phantom home">
+        <Link className="np-nav-logo" href="/" onClick={close} aria-label="Night Phantom home">
           Night Phantom
-        </a>
+        </Link>
         <ul className="nav-links">
           {links.map(({ href, label, external }) => (
             <li key={href}>
@@ -32,6 +33,8 @@ export function SiteNav() {
                 <a href={href} target="_blank" rel="noopener noreferrer">
                   {label}
                 </a>
+              ) : href.startsWith("/") ? (
+                <Link href={href}>{label}</Link>
               ) : (
                 <a href={href}>{label}</a>
               )}
@@ -70,6 +73,10 @@ export function SiteNav() {
             >
               {label}
             </a>
+          ) : href.startsWith("/") ? (
+            <Link key={href} href={href} onClick={close}>
+              {label}
+            </Link>
           ) : (
             <a key={href} href={href} onClick={close}>
               {label}

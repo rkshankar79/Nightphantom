@@ -8,6 +8,7 @@ type NavLink =
 
 const links: NavLink[] = [
   { href: "#trinity", label: "Trinity" },
+  { href: "/vape-tech", label: "Vape tech" },
   { href: "#story", label: "Story" },
   { href: "#stores", label: "Stores" },
   { href: "https://nightphantomhq.com/shop/", label: "Shop", external: true },

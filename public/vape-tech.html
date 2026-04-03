@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Night Phantom — Vape tech</title>
+<meta name="description" content="Night Phantom all-in-one vape pairs — Twilight, Dusk, and Dawn duos. Hybrid, Indica, and Sativa. Untamed spirit. For adults 21+ in legal jurisdictions.">
+<link rel="canonical" href="https://nightphantomhq.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Night Phantom — AIO Vape Pairs">
+<meta property="og:description" content="Night Phantom all-in-one vape pairs — Twilight, Dusk, and Dawn duos. Hybrid, Indica, and Sativa. For adults 21+ in legal jurisdictions.">
+<meta property="og:url" content="https://nightphantomhq.com/">
+<meta property="og:image" content="https://nightphantomhq.com/nplogo.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Night Phantom — AIO Vape Pairs">
+<meta name="twitter:description" content="Night Phantom all-in-one vape pairs — Twilight, Dusk, and Dawn duos. For adults 21+ in legal jurisdictions.">
+<meta name="twitter:image" content="https://nightphantomhq.com/nplogo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Cinzel:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#FF2D2D;--gold-light:#FF6B6B;--gold-dim:#8B0000;
+  --ink:#0A0A0C;--ink2:#111116;--ink3:#1A1A22;
+  --text:#E8E4D8;--text-muted:rgba(232,228,216,0.55);--text-dim:rgba(232,228,216,0.25);
+  --red:#CC2222;--yellow:#FFD84A;--purple:#7B3FBE;--teal:#1ABCB0;
+}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--text);font-family:'Inter',sans-serif;font-weight:300;overflow-x:hidden;line-height:1.6}
+
+/* ── BACK BAR (no full nav) ── */
+.vape-tech-topbar{
+  position:sticky;top:0;z-index:100;
+  padding:0.85rem 1.5rem;
+  background:rgba(10,10,12,0.94);
+  border-bottom:1px solid rgba(255,45,45,0.12);
+  backdrop-filter:blur(10px);
+}
+.vape-tech-back{
+  font-family:'Cinzel',serif;
+  font-size:0.68rem;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+.vape-tech-back:hover{color:var(--gold-light)}
+
+/* ── AGE GATE ── */
+.age-gate{position:fixed;inset:0;z-index:999;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;padding:2rem;text-align:center;transition:opacity 0.5s}
+.age-gate.hidden{opacity:0;pointer-events:none}
+.age-gate img{height:80px;margin-bottom:1rem}
+.age-gate h3{font-family:'Cinzel',serif;font-size:1.6rem;color:var(--text)}
+.age-gate p{font-size:0.85rem;color:var(--text-muted);max-width:340px;line-height:1.7}
+.age-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.age-no{font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.15em;padding:0.85rem 2rem;border:1px solid rgba(232,228,216,0.15);border-radius:4px;color:var(--text-muted);background:transparent;cursor:pointer}
+
+/* ── BUTTONS ── */
+.btn-primary{font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;padding:0.9rem 2.5rem;background:linear-gradient(135deg,#FF2D2D 0%,#CC0000 100%);color:#fff;border:none;border-radius:4px;cursor:pointer;transition:opacity 0.2s,transform 0.15s;font-weight:700;display:inline-block}
+.btn-primary:hover{opacity:0.9;transform:translateY(-1px)}
+.btn-ghost{font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;padding:0.9rem 2.5rem;background:transparent;color:var(--gold);border:1px solid var(--gold-dim);border-radius:4px;cursor:pointer;transition:border-color 0.2s,transform 0.15s;display:inline-block}
+.btn-ghost:hover{border-color:var(--gold);transform:translateY(-1px)}
+
+/* ── SECTION SHARED ── */
+section{padding:5rem 2rem}
+.section-label{font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.5em;color:var(--gold);text-transform:uppercase;display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem}
+.section-label::before{content:'';width:32px;height:1px;background:var(--gold-dim)}
+h2{font-family:'Cinzel',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:700;line-height:1.2;color:var(--text)}
+.gold{color:#FFE600}
+
+
+/* ── MAGNETIC SECTION REBUILT ── */
+.magnetic-section{background:var(--ink2);display:flex;align-items:center;justify-content:center;padding:5rem 2rem;position:relative;overflow:hidden}
+.magnetic-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 40% 50%,rgba(255,45,45,0.04) 0%,transparent 70%)}
+.mag-inner{max-width:1100px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+
+/* Colorway picker */
+.mag-picker{display:flex;gap:10px;margin-bottom:1.5rem;justify-content:center;position:relative;z-index:20;padding-bottom:8px}
+.mag-pick{
+  width:64px;height:44px;border-radius:8px;border:2px solid rgba(255,255,255,0.15);
+  cursor:pointer;background:#1a1a22;display:flex;gap:3px;overflow:hidden;
+  padding:4px;transition:border-color 0.2s,transform 0.15s;
+  box-sizing:border-box;flex-shrink:0;
+}
+.mag-pick span{flex:1;border-radius:3px;display:block;min-width:0;height:100%}
+.mag-pick.active{border-color:#FF2D2D;transform:scale(1.1)}
+.mag-pick:hover{border-color:rgba(255,255,255,0.3)}
+
+/* Stage */
+.mag-stage{
+  position:relative;display:flex;flex-direction:column;
+  align-items:center;gap:0;
+  background:rgba(255,255,255,0.02);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:20px;padding:2rem 1.5rem 1.5rem;
+  min-height:420px;justify-content:center;
+  z-index:5;
+}
+
+/* State label */
+.mag-state-label{
+  position:absolute;top:1rem;left:50%;transform:translateX(-50%);
+  font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.3em;
+  color:rgba(255,255,255,0.35);text-transform:uppercase;white-space:nowrap;
+  transition:all 0.4s;
+}
+.mag-stage.separated .mag-state-label{color:rgba(255,45,45,0.6)}
+
+/* Device pair container */
+.mag-duo{
+  display:flex;align-items:center;gap:0;cursor:pointer;
+  position:relative;transition:gap 0.7s cubic-bezier(0.34,1.56,0.64,1);
+  margin:1rem 0;
+}
+.mag-duo.separated{gap:60px}
+
+/* Individual device */
+.mag-dev{
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  transition:transform 0.7s cubic-bezier(0.34,1.56,0.64,1);
+  position:relative;
+}
+.mag-duo.separated .mag-dev-l{transform:translateX(-6px) rotate(-4deg)}
+.mag-duo.separated .mag-dev-r{transform:translateX(6px) rotate(4deg)}
+
+.mag-dev-body{
+  width:80px;height:230px;
+  border-radius:18px;
+  position:relative;overflow:hidden;
+  background:linear-gradient(170deg,#CC0000,#880000);
+  box-shadow:0 12px 40px rgba(0,0,0,0.6),0 4px 12px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.15);
+  transition:background 0.5s ease;
+}
+.mag-dev-l .mag-dev-body{border-radius:18px 4px 4px 18px;background:linear-gradient(170deg,#CC0000,#880000)}
+.mag-dev-r .mag-dev-body{border-radius:4px 18px 18px 4px;background:linear-gradient(170deg,#444,#000)}
+.mag-duo.separated .mag-dev-l .mag-dev-body{border-radius:18px}
+.mag-duo.separated .mag-dev-r .mag-dev-body{border-radius:18px}
+
+.mag-dev-shine{
+  position:absolute;inset:0;border-radius:inherit;
+  background:linear-gradient(120deg,rgba(255,255,255,0.2) 0%,transparent 45%,rgba(255,255,255,0.05) 100%);
+}
+.mag-dev-win{
+  position:absolute;top:22px;left:50%;transform:translateX(-50%);
+  width:26px;height:32px;border-radius:7px;
+  background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.15);
+}
+.mag-dev-win::after{
+  content:'';position:absolute;inset:0;border-radius:inherit;
+  background:radial-gradient(ellipse at center,rgba(255,255,255,0.2),transparent);
+  animation:winGlow 2s ease-in-out infinite;
+}
+@keyframes winGlow{0%,100%{opacity:0.4}50%{opacity:1}}
+.mag-dev-logo-circle{
+  position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+  width:38px;height:38px;border-radius:50%;
+  background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.2);
+  display:flex;align-items:center;justify-content:center;
+}
+.mag-dev-logo-circle span{
+  font-family:'Cinzel',serif;font-size:8px;font-weight:700;
+  color:rgba(255,255,255,0.8);letter-spacing:0.05em;
+}
+.mag-dev-tip{
+  position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+  width:18px;height:12px;background:rgba(0,0,0,0.4);border-radius:4px 4px 0 0;
+}
+
+/* Gram label under device */
+.mag-dev-gram{
+  font-family:'Bangers',cursive;font-size:1.1rem;letter-spacing:0.1em;
+  color:rgba(255,255,255,0.3);transition:color 0.4s;
+}
+.mag-duo.separated .mag-dev-gram{color:rgba(255,255,255,0.7)}
+
+/* Magnetic joint */
+.mag-joint{
+  width:12px;height:200px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  position:relative;flex-shrink:0;
+  transition:opacity 0.4s,width 0.4s;z-index:2;
+}
+.mag-duo.separated .mag-joint{opacity:0;width:0}
+
+/* Spark particles */
+.mag-spark{
+  position:absolute;width:4px;height:4px;border-radius:50%;
+  background:#FFE600;animation:sparkAnim 1.6s ease-in-out infinite;
+}
+.s1{top:25%;animation-delay:0s}
+.s2{top:50%;animation-delay:0.5s}
+.s3{top:72%;animation-delay:1s}
+@keyframes sparkAnim{
+  0%{opacity:0;transform:scale(0)}
+  40%{opacity:1;transform:scale(1.8)}
+  60%{opacity:0.5;transform:scale(1) translateX(4px)}
+  100%{opacity:0;transform:scale(0) translateX(8px)}
+}
+
+/* Field lines */
+.mag-field-line{
+  position:absolute;width:2px;border-radius:1px;
+  background:radial-gradient(ellipse at center,rgba(255,230,0,0.8) 0%,transparent 100%);
+  animation:fieldPulse 2s ease-in-out infinite;
+}
+.fl1{height:120px;animation-delay:0s}
+.fl2{height:80px;animation-delay:0.4s;opacity:0.6}
+.fl3{height:50px;animation-delay:0.8s;opacity:0.4}
+@keyframes fieldPulse{
+  0%,100%{opacity:0.3;transform:scaleY(0.8)}
+  50%{opacity:1;transform:scaleY(1.1)}
+}
+
+/* Total badge */
+.mag-total{
+  font-family:'Bangers',cursive;font-size:1.2rem;letter-spacing:0.15em;
+  color:#FFE600;
+  background:#CC0000;border:2px solid #FFE600;
+  padding:0.3rem 1.2rem;border-radius:3px;
+  box-shadow:3px 3px 0 rgba(0,0,0,0.5);
+  transition:opacity 0.4s,transform 0.4s;
+  margin-top:0.5rem;
+}
+.mag-stage.separated .mag-total{opacity:0;transform:scale(0.8)}
+
+/* Tap hint */
+.mag-tap-hint{
+  display:flex;align-items:center;gap:0.5rem;
+  font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.25em;
+  color:rgba(255,255,255,0.25);text-transform:uppercase;
+  margin-top:1rem;transition:color 0.3s;
+}
+.mag-tap-hint:hover{color:rgba(255,45,45,0.6)}
+.mag-tap-icon{font-size:0.9rem;animation:bounce 2s ease-in-out infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+
+/* Snap flash effect */
+@keyframes snapFlash{
+  0%{opacity:0} 20%{opacity:0.4} 100%{opacity:0}
+}
+.mag-stage.snapping::after{
+  content:'';position:absolute;inset:0;border-radius:20px;
+  background:rgba(255,230,0,0.15);
+  animation:snapFlash 0.5s ease forwards;
+  pointer-events:none;
+}
+
+/* Duo display */
+.mag-duo-display{text-align:center;margin-top:1.2rem}
+.mag-duo-name{
+  font-family:'Bangers',cursive;font-size:1.6rem;letter-spacing:0.08em;
+  color:#fff;line-height:1;margin-bottom:0.3rem;
+  transition:color 0.3s;
+}
+.mag-duo-type{
+  font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.2em;
+  color:rgba(255,255,255,0.45);text-transform:uppercase;
+}
+.mag-duo-type span{color:#FF2D2D}
+
+/* Stats row */
+.mag-stats{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:rgba(255,45,45,0.15);
+  border:1px solid rgba(255,45,45,0.15);
+  border-radius:6px;overflow:hidden;
+  margin:2rem 0 1.5rem;
+}
+.mag-stat{background:var(--ink2);padding:0.9rem 0.5rem;text-align:center}
+.mag-stat-val{
+  font-family:'Bangers',cursive;font-size:1.5rem;letter-spacing:0.05em;
+  color:#FF2D2D;line-height:1;margin-bottom:0.2rem;
+}
+.mag-stat-key{
+  font-family:'Cinzel',serif;font-size:0.55rem;letter-spacing:0.2em;
+  color:rgba(255,255,255,0.35);text-transform:uppercase;
+}
+
+/* Copy side */
+.mag-copy h2{margin-bottom:1.5rem}
+.mag-copy p{font-size:0.95rem;color:var(--text-muted);line-height:1.8;margin-bottom:1.25rem}
+.feature-pills{display:flex;flex-wrap:wrap;gap:0.45rem;margin-top:1.25rem}
+.pill{
+  font-family:'Cinzel',serif;font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;
+  padding:0.35rem 0.7rem;border:1px solid rgba(255,45,45,0.28);border-radius:999px;
+  color:rgba(232,228,216,0.72);background:rgba(0,0,0,0.2);
+}
+
+@media(max-width:900px){
+  .mag-inner{grid-template-columns:1fr;gap:3rem}
+  .mag-visual{order:-1}
+  .mag-stats{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ── COLORWAYS — comic card style ── */
+.colorways-section{background:var(--ink)}
+.colorways-header{text-align:center;max-width:600px;margin:0 auto 4rem}
+.colorways-header p{color:var(--text-muted);margin-top:1rem;font-size:0.95rem}
+.colorways-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:1100px;margin:0 auto;border:4px solid #000}
+.colorway-card{position:relative;overflow:hidden;cursor:pointer;border:4px solid #000;transition:transform 0.2s}
+.colorway-card:hover{transform:scale(1.02);z-index:2}
+.colorway-card img{width:100%;display:block;transition:transform 0.4s ease}
+.colorway-card:hover img{transform:scale(1.05)}
+.card-overlay{position:absolute;bottom:0;left:0;right:0;padding:1.2rem 1rem;background:linear-gradient(to top,rgba(0,0,0,0.92) 0%,transparent 100%)}
+.card-name{font-family:'Bangers',cursive;font-size:1.3rem;letter-spacing:0.08em;line-height:1;margin-bottom:0.2rem}
+.card-strain{font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.2em;color:rgba(255,255,255,0.6);text-transform:uppercase}
+.card-badge{display:inline-block;font-family:'Bangers',cursive;font-size:0.85rem;letter-spacing:0.1em;padding:0.15rem 0.6rem;margin-bottom:0.3rem;border:2px solid}
+
+/* colorway themes */
+.cw-red .card-name{color:#FFD84A}
+.cw-red .card-badge{background:#CC2222;color:#FFD84A;border-color:#FFD84A}
+.cw-yellow .card-name{color:#1ABCB0}
+.cw-yellow .card-badge{background:#FFD84A;color:#000;border-color:#000}
+.cw-purple .card-name{color:#FFD84A}
+.cw-purple .card-badge{background:#7B3FBE;color:#FFD84A;border-color:#FFD84A}
+
+/* ── SPECS ── */
+.specs-section{padding:5rem 2rem;max-width:1100px;margin:0 auto}
+.specs-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.spec-table{width:100%;border-collapse:collapse;margin-top:2rem}
+.spec-table tr{border-bottom:1px solid rgba(255,45,45,0.08)}
+.spec-table td{padding:0.85rem 0;font-size:0.85rem}
+.spec-table td:first-child{color:var(--text-dim);letter-spacing:0.05em}
+.spec-table td:last-child{text-align:right;color:var(--text);font-weight:400}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);border-top:1px solid rgba(255,45,45,0.08);padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+footer p{font-size:0.75rem;color:var(--text-dim);letter-spacing:0.05em}
+.footer-disclaimer{font-size:0.65rem;color:var(--text-dim);max-width:400px;line-height:1.5}
+
+/* ── ANIMATIONS ── */
+@keyframes floatUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{opacity:0;animation:floatUp 0.7s ease forwards}
+.fade-up:nth-child(1){animation-delay:0.1s}
+.fade-up:nth-child(2){animation-delay:0.2s}
+.fade-up:nth-child(3){animation-delay:0.3s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .mag-inner{grid-template-columns:1fr;gap:3rem}
+  .specs-inner{grid-template-columns:1fr;gap:2rem}
+  .colorways-grid{grid-template-columns:1fr}
+}
+
+/* ── COLORWAY CARDS — comic art style ── */
+.colorways-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:0;max-width:1100px;margin:0 auto;
+  border:4px solid #000;
+}
+.colorway-card{
+  position:relative;overflow:hidden;cursor:pointer;
+  border:4px solid #000;min-height:420px;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  transition:transform 0.2s;
+}
+.colorway-card:hover{transform:scale(1.02);z-index:2}
+
+/* Background layer */
+.cw-bg{position:absolute;inset:0;z-index:0}
+
+/* Twilight — red top / black bottom diagonal split */
+.cw-twilight .cw-bg{background:#CC0000}
+.cw-twilight .cw-split{
+  position:absolute;bottom:0;left:0;right:0;height:55%;
+  background:#111;
+  clip-path:polygon(0 25%,100% 0%,100% 100%,0 100%);
+}
+/* Dawn — yellow top / teal bottom */
+.cw-dawn .cw-bg{background:#FFD84A}
+.cw-dawn .cw-split{
+  position:absolute;bottom:0;left:0;right:0;height:55%;
+  background:#1ABCB0;
+  clip-path:polygon(0 25%,100% 0%,100% 100%,0 100%);
+}
+/* Dusk — purple top / blue bottom */
+.cw-dusk .cw-bg{background:#6B35AD}
+.cw-dusk .cw-split{
+  position:absolute;bottom:0;left:0;right:0;height:55%;
+  background:#1E5FA8;
+  clip-path:polygon(0 25%,100% 0%,100% 100%,0 100%);
+}
+
+/* Halftone dots overlay */
+.cw-halftone{
+  position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(0,0,0,0.15) 1px,transparent 1px);
+  background-size:12px 12px;
+}
+
+/* Action burst lines from center */
+.cw-burst{
+  position:absolute;top:38%;left:50%;transform:translate(-50%,-50%);
+  width:280px;height:280px;
+  background:repeating-conic-gradient(rgba(255,255,255,0.08) 0deg 10deg,transparent 10deg 20deg);
+  border-radius:50%;
+}
+
+/* CSS vape devices */
+.cw-devices{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-58%);
+  display:flex;align-items:center;gap:4px;z-index:2;
+}
+.cw-dev{
+  width:52px;height:148px;border-radius:12px;
+  position:relative;overflow:hidden;
+  box-shadow:4px 4px 0 rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.2);
+}
+.cw-dev-red{background:linear-gradient(170deg,#FF4444 0%,#CC0000 50%,#880000 100%);border-radius:12px 2px 2px 12px}
+.cw-dev-black{background:linear-gradient(170deg,#444 0%,#222 50%,#000 100%);border-radius:2px 12px 12px 2px}
+.cw-dev-yellow{background:linear-gradient(170deg,#FFE84A 0%,#F7C823 50%,#D4A000 100%);border-radius:12px 2px 2px 12px}
+.cw-dev-blue{background:linear-gradient(170deg,#5ECDC5 0%,#1ABCB0 50%,#0E8880 100%);border-radius:2px 12px 12px 2px}
+.cw-dev-purple{background:linear-gradient(170deg,#B07EE8 0%,#7B3FBE 50%,#4A2480 100%);border-radius:12px 2px 2px 12px}
+.cw-dev-ltblue{background:linear-gradient(170deg,#90C8F8 0%,#4A90D8 50%,#1E5FA8 100%);border-radius:2px 12px 12px 2px}
+
+/* Device sheen */
+.cw-dev-shine{
+  position:absolute;top:0;left:0;right:0;bottom:0;
+  background:linear-gradient(120deg,rgba(255,255,255,0.25) 0%,transparent 45%);
+  border-radius:inherit;
+}
+/* Device button */
+.cw-dev-btn{
+  position:absolute;top:20px;left:50%;transform:translateX(-50%);
+  width:18px;height:22px;border-radius:4px;
+  background:rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.15);
+}
+/* Device logo text */
+.cw-dev-logo{
+  position:absolute;bottom:16px;left:50%;transform:translateX(-50%);
+  font-family:'Cinzel',serif;font-size:7px;font-weight:700;
+  color:rgba(255,255,255,0.7);letter-spacing:0.05em;
+  white-space:nowrap;
+}
+
+/* Magnetic pulse between devices */
+.cw-mag-pulse{
+  width:6px;height:100px;
+  background:radial-gradient(ellipse at center,rgba(255,230,0,0.9) 0%,transparent 70%);
+  border-radius:3px;
+  animation:magPulseCard 1.8s ease-in-out infinite;
+  flex-shrink:0;
+}
+@keyframes magPulseCard{0%,100%{opacity:0.4;width:4px}50%{opacity:1;width:7px}}
+
+/* Comic speech bubble */
+.cw-speech{
+  position:absolute;top:14px;left:14px;z-index:3;
+  font-family:'Bangers',cursive;font-size:1.1rem;letter-spacing:0.06em;
+  color:#000;
+  background:#FFE600;
+  padding:0.3rem 0.8rem;
+  border:3px solid #000;
+  border-radius:4px;
+  box-shadow:3px 3px 0 #000;
+  white-space:nowrap;
+}
+.cw-speech::after{
+  content:'';position:absolute;bottom:-12px;left:16px;
+  width:0;height:0;
+  border-left:10px solid transparent;
+  border-right:4px solid transparent;
+  border-top:12px solid #000;
+}
+.cw-speech::before{
+  content:'';position:absolute;bottom:-8px;left:17px;
+  width:0;height:0;
+  border-left:8px solid transparent;
+  border-right:3px solid transparent;
+  border-top:10px solid #FFE600;
+  z-index:1;
+}
+.cw-speech-dawn{background:#fff;color:#000}
+.cw-speech-dawn::before{border-top-color:#fff}
+.cw-speech-dusk{background:#FFE600;color:#000}
+
+/* Info bar at bottom */
+.cw-info{
+  position:relative;z-index:3;
+  padding:1rem 1.1rem 1.1rem;
+  background:rgba(0,0,0,0.88);
+  border-top:3px solid #000;
+}
+.cw-badge{
+  display:inline-block;font-family:'Bangers',cursive;
+  font-size:0.8rem;letter-spacing:0.1em;
+  padding:0.15rem 0.6rem;border:2px solid;
+  margin-bottom:0.35rem;
+}
+.cw-badge-hybrid{background:#CC0000;color:#FFE600;border-color:#FFE600}
+.cw-badge-sativa{background:#FFD84A;color:#000;border-color:#000}
+.cw-badge-indica{background:#6B35AD;color:#FFE600;border-color:#FFE600}
+.cw-duo-name{
+  font-family:'Bangers',cursive;font-size:1.4rem;
+  letter-spacing:0.06em;color:#fff;line-height:1;margin-bottom:0.2rem;
+}
+.cw-colors{
+  font-family:'Cinzel',serif;font-size:0.6rem;
+  letter-spacing:0.2em;color:rgba(255,255,255,0.5);
+  text-transform:uppercase;
+}
+
+@media(max-width:900px){
+  .colorways-grid{grid-template-columns:1fr}
+  .colorway-card{min-height:340px}
+}
+
+/* Skip link */
+.skip-link{position:absolute;left:1rem;top:-120px;z-index:10001;padding:0.65rem 1.1rem;background:linear-gradient(135deg,#FF2D2D,#CC0000);color:#fff;font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;border-radius:4px;border:1px solid rgba(255,255,255,0.2)}
+.skip-link:focus,.skip-link:focus-visible{top:1rem;outline:2px solid #FFE600;outline-offset:3px}
+#main-content:focus{outline:none}
+#main-content:focus-visible{outline:2px solid var(--gold-light);outline-offset:4px}
+
+/* Keyboard focus */
+a:focus-visible,button:focus-visible,.mag-pick:focus-visible{outline:2px solid var(--gold-light);outline-offset:3px}
+.btn-primary:focus-visible,.age-no:focus-visible{outline-color:#FFE600}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .fade-up{opacity:1;animation:none}
+  .colorway-card,.colorway-card img{transition:none}
+  .colorway-card:hover,.colorway-card:hover img{transform:none}
+  .mag-duo,.mag-dev,.mag-joint,.mag-total,.mag-pick,.mag-state-label{transition-duration:0.01ms!important}
+  .btn-primary,.btn-ghost{transition-duration:0.01ms!important}
+  .btn-primary:hover,.btn-ghost:hover{transform:none}
+  .mag-dev-win::after,.mag-spark,.mag-field-line,.mag-tap-icon,.cw-mag-pulse,.mag-stage.snapping::after{animation:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- AGE GATE -->
+<div class="age-gate" id="ageGate">
+  <h3>Are you 21 or older?</h3>
+  <p>You must be of legal cannabis age to enter. Please verify your age.</p>
+  <div class="age-btns">
+    <button class="btn-primary" onclick="enterSite()">Yes, I'm 21+</button>
+    <button class="age-no" onclick="window.location.href='https://www.google.com'">No</button>
+  </div>
+  <p style="font-size:0.7rem;color:var(--text-dim)">For legal jurisdictions only. Keep out of reach of children.</p>
+</div>
+
+<header class="vape-tech-topbar">
+  <a class="vape-tech-back" href="/">← Back to Night Phantom</a>
+</header>
+
+<main id="main-content" tabindex="-1">
+<!-- MAGNETIC SECTION — The Innovation -->
+<section class="magnetic-section" id="magnetic">
+  <div class="mag-inner">
+
+    <!-- LEFT: Interactive demo -->
+    <div class="mag-visual">
+
+      <!-- Colorway picker -->
+      <div class="mag-picker" id="magPicker" style="display:flex;gap:14px;margin-bottom:2rem;justify-content:center;position:relative;z-index:20">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer" onclick="switchDuo(this.querySelector('button'))">
+          <button class="mag-pick active" data-duo="twilight" data-name="Twilight Duo" data-type="Hybrid" data-colors="Red &amp; Black" onclick="event.stopPropagation();switchDuo(this)" style="width:64px;height:44px;border-radius:8px;border:2px solid #FF2D2D;cursor:pointer;background:#1a1a22;display:flex;gap:3px;overflow:hidden;padding:4px;box-sizing:border-box;transform:scale(1.1)">
+            <span style="flex:1;display:block;border-radius:3px;background:linear-gradient(135deg,#CC0000,#880000);min-width:0"></span>
+            <span style="flex:1;display:block;border-radius:3px;background:linear-gradient(135deg,#333,#000);min-width:0"></span>
+          </button>
+          <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase">Twilight</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer" onclick="switchDuo(this.querySelector('button'))">
+          <button class="mag-pick" data-duo="dawn" data-name="Dawn Duo" data-type="Sativa" data-colors="Yellow &amp; Blue" onclick="event.stopPropagation();switchDuo(this)" style="width:64px;height:44px;border-radius:8px;border:2px solid rgba(255,255,255,0.15);cursor:pointer;background:#1a1a22;display:flex;gap:3px;overflow:hidden;padding:4px;box-sizing:border-box">
+            <span style="flex:1;display:block;border-radius:3px;background:linear-gradient(135deg,#FFE84A,#D4A000);min-width:0"></span>
+            <span style="flex:1;display:block;border-radius:3px;background:linear-gradient(135deg,#5ECDC5,#0E8880);min-width:0"></span>
+          </button>
+          <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase">Dawn</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer" onclick="switchDuo(this.querySelector('button'))">
+          <button class="mag-pick" data-duo="dusk" data-name="Dusk Duo" data-type="Indica" data-colors="Purple &amp; Blue" onclick="event.stopPropagation();switchDuo(this)" style="width:64px;height:44px;border-radius:8px;border:2px solid rgba(255,255,255,0.15);cursor:pointer;background:#1a1a22;display:flex;gap:3px;overflow:hidden;padding:4px;box-sizing:border-box">
+            <span style="flex:1;display:block;border-radius:3px;background:linear-gradient(135deg,#B07EE8,#4A2480);min-width:0"></span>
+            <span style="flex:1;display:block;border-radius:3px;background:linear-gradient(135deg,#90C8F8,#1E5FA8);min-width:0"></span>
+          </button>
+          <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:0.15em;color:rgba(255,255,255,0.35);text-transform:uppercase">Dusk</span>
+        </div>
+      </div>
+
+      <!-- Main device stage -->
+      <div class="mag-stage">
+
+        <!-- Combined state label -->
+        <div class="mag-state-label" id="magStateLabel">Snapped Together · 2g</div>
+
+        <!-- Device pair -->
+        <div class="mag-duo" id="magDuo" onclick="toggleMagSnap()">
+          <div class="mag-dev mag-dev-l" id="magDevL">
+            <div class="mag-dev-body">
+              <div class="mag-dev-shine"></div>
+              <div class="mag-dev-win"></div>
+              <div class="mag-dev-logo-circle"><span>NP</span></div>
+              <div class="mag-dev-tip"></div>
+            </div>
+            <div class="mag-dev-gram">1g</div>
+          </div>
+
+          <!-- Magnetic joint -->
+          <div class="mag-joint" id="magJoint">
+            <div class="mag-spark s1"></div>
+            <div class="mag-spark s2"></div>
+            <div class="mag-spark s3"></div>
+            <div class="mag-field-line fl1"></div>
+            <div class="mag-field-line fl2"></div>
+            <div class="mag-field-line fl3"></div>
+          </div>
+
+          <div class="mag-dev mag-dev-r" id="magDevR">
+            <div class="mag-dev-body">
+              <div class="mag-dev-shine"></div>
+              <div class="mag-dev-win"></div>
+              <div class="mag-dev-logo-circle"><span>NP</span></div>
+              <div class="mag-dev-tip"></div>
+            </div>
+            <div class="mag-dev-gram">1g</div>
+          </div>
+        </div>
+
+        <!-- Total weight badge -->
+        <div class="mag-total" id="magTotal">= 2g Total</div>
+
+        <!-- Tap instruction -->
+        <div class="mag-tap-hint" id="magTapHint">
+          <div class="mag-tap-icon">↕</div>
+          <span>Tap to separate</span>
+        </div>
+      </div>
+
+      <!-- Duo name display -->
+      <div class="mag-duo-display">
+        <div class="mag-duo-name" id="magDuoName">Twilight Duo</div>
+        <div class="mag-duo-type"><span id="magDuoType">Hybrid</span> · <span id="magDuoColors">Red &amp; Black</span></div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: Copy -->
+    <div class="mag-copy">
+      <div class="section-label">The Innovation</div>
+      <h2>Magnetic <span class="gold">Dual Vape</span> System</h2>
+      <p>Two 1g premium AIO vapes — each a different strain — that snap together magnetically. One pack, two experiences. Use them as a single 2g unit, separate for different moods, or share one with a friend.</p>
+      <p>No cartridges. No charging. No posts. Draw-activated, rechargeable, and pre-filled with premium Illinois cannabis oil — fully postless AIO design. The magnetic snap is the same every time — the experience never is.</p>
+
+      <!-- Stats row -->
+      <div class="mag-stats">
+        <div class="mag-stat">
+          <div class="mag-stat-val">2g</div>
+          <div class="mag-stat-key">Per 2 Pack</div>
+        </div>
+        <div class="mag-stat">
+          <div class="mag-stat-val">1g</div>
+          <div class="mag-stat-key">Per Device</div>
+        </div>
+        <div class="mag-stat">
+          <div class="mag-stat-val">2</div>
+          <div class="mag-stat-key">Strains</div>
+        </div>
+        <div class="mag-stat">
+          <div class="mag-stat-val">3</div>
+          <div class="mag-stat-key">Duos</div>
+        </div>
+      </div>
+
+      <div class="feature-pills">
+        <span class="pill">Postless AIO</span>
+        <span class="pill">Magnetic Snap</span>
+        <span class="pill">AIO Design</span>
+        <span class="pill">Rechargeable</span>
+        <span class="pill">Draw-Activated</span>
+        <span class="pill">Illinois Licensed</span>
+        <span class="pill">Lab Verified</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- COLORWAYS -->
+<section class="colorways-section" id="colorways">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="colorways-header">
+      <div class="section-label">The Collection</div>
+      <h2>Three <span class="gold">Duos.</span><br>One Universe.</h2>
+      <p>Each colorway is a chapter in the Night Phantom story. Same magnetic system, different strains, different energy.</p>
+    </div>
+    <div class="colorways-grid">
+
+      <!-- CARD 1: Twilight Duo — Red & Black -->
+      <div class="colorway-card cw-twilight">
+        <div class="cw-bg">
+          <div class="cw-halftone"></div>
+          <div class="cw-burst"></div>
+          <div class="cw-split"></div>
+        </div>
+        <div class="cw-devices">
+          <div class="cw-dev cw-dev-red">
+            <div class="cw-dev-shine"></div>
+            <div class="cw-dev-btn"></div>
+            <div class="cw-dev-logo">NP</div>
+          </div>
+          <div class="cw-mag-pulse"></div>
+          <div class="cw-dev cw-dev-black">
+            <div class="cw-dev-shine"></div>
+            <div class="cw-dev-btn"></div>
+            <div class="cw-dev-logo">NP</div>
+          </div>
+        </div>
+        <div class="cw-speech">Hybrid Power!</div>
+        <div class="cw-info">
+          <span class="cw-badge cw-badge-hybrid">Hybrid</span>
+          <div class="cw-duo-name">Twilight Duo</div>
+          <div class="cw-colors">Red &amp; Black · 2g Total</div>
+        </div>
+      </div>
+
+      <!-- CARD 2: Dawn Duo — Yellow & Blue -->
+      <div class="colorway-card cw-dawn">
+        <div class="cw-bg">
+          <div class="cw-halftone"></div>
+          <div class="cw-burst"></div>
+          <div class="cw-split cw-split-dawn"></div>
+        </div>
+        <div class="cw-devices">
+          <div class="cw-dev cw-dev-yellow">
+            <div class="cw-dev-shine"></div>
+            <div class="cw-dev-btn"></div>
+            <div class="cw-dev-logo">NP</div>
+          </div>
+          <div class="cw-mag-pulse"></div>
+          <div class="cw-dev cw-dev-blue">
+            <div class="cw-dev-shine"></div>
+            <div class="cw-dev-btn"></div>
+            <div class="cw-dev-logo">NP</div>
+          </div>
+        </div>
+        <div class="cw-speech cw-speech-dawn">Sativa Energy!</div>
+        <div class="cw-info">
+          <span class="cw-badge cw-badge-sativa">Sativa</span>
+          <div class="cw-duo-name">Dawn Duo</div>
+          <div class="cw-colors">Yellow &amp; Blue · 2g Total</div>
+        </div>
+      </div>
+
+      <!-- CARD 3: Dusk Duo — Purple & Blue -->
+      <div class="colorway-card cw-dusk">
+        <div class="cw-bg">
+          <div class="cw-halftone"></div>
+          <div class="cw-burst"></div>
+          <div class="cw-split cw-split-dusk"></div>
+        </div>
+        <div class="cw-devices">
+          <div class="cw-dev cw-dev-purple">
+            <div class="cw-dev-shine"></div>
+            <div class="cw-dev-btn"></div>
+            <div class="cw-dev-logo">NP</div>
+          </div>
+          <div class="cw-mag-pulse"></div>
+          <div class="cw-dev cw-dev-ltblue">
+            <div class="cw-dev-shine"></div>
+            <div class="cw-dev-btn"></div>
+            <div class="cw-dev-logo">NP</div>
+          </div>
+        </div>
+        <div class="cw-speech cw-speech-dusk">Indica Calm!</div>
+        <div class="cw-info">
+          <span class="cw-badge cw-badge-indica">Indica</span>
+          <div class="cw-duo-name">Dusk Duo</div>
+          <div class="cw-colors">Purple &amp; Blue · 2g Total</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section id="specs" style="padding:5rem 2rem">
+  <div class="specs-inner">
+    <div>
+      <div class="section-label">The Details</div>
+      <h2>Built for <span class="gold">Precision.</span></h2>
+      <p style="color:var(--text-muted);margin-top:1rem;font-size:0.95rem;line-height:1.8">No buttons. No cartridges. No posts. No guesswork. Rechargeable. Draw-activated, pre-filled, magnetically paired. Night Phantom AIO is the cleanest cannabis experience in Illinois.</p>
+      <div style="margin-top:2.5rem;padding:1.5rem;border:1px solid rgba(255,45,45,0.12);background:rgba(201,168,76,0.03)">
+        <div style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.3em;color:#FF2D2D;margin-bottom:1rem">The Combination Rule</div>
+        <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.8">Snap two devices together for a 2g dual-flavor session. The magnetic connection is firm enough to carry as one unit but separates instantly when you want to share.</p>
+      </div>
+    </div>
+    <div>
+      <table class="spec-table">
+        <tr><td>Format</td><td>AIO Disposable</td></tr>
+        <tr><td>Net Weight</td><td>1g per device</td></tr>
+        <tr><td>Per Pack</td><td>1 device (1g)</td></tr>
+        <tr><td>Connection</td><td>Magnetic snap</td></tr>
+        <tr><td>Design</td><td>Postless AIO</td></tr>
+        <tr><td>Battery</td><td>Rechargeable</td></tr>
+        <tr><td>Activation</td><td>Draw-activated</td></tr>
+        <tr><td>Cartridge</td><td>None required</td></tr>
+        <tr><td>Flavors per pack</td><td>2 strains</td></tr>
+        <tr><td>Packaging</td><td>Round mylar, dual-half</td></tr>
+        <tr><td>State</td><td>Illinois licensed</td></tr>
+        <tr><td>Testing</td><td>Third-party lab verified</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Night Phantom · Indus365 LLC · All Rights Reserved</p>
+  <p class="footer-disclaimer">For adults 21+ only. Cannabis products are for use in jurisdictions where cannabis is legal. Keep out of reach of children.</p>
+</footer>
+
+<script>
+if(localStorage.getItem('np_age_verified')){
+  document.getElementById('ageGate').classList.add('hidden');
+}
+function enterSite(){
+  localStorage.setItem('np_age_verified','1');
+  document.getElementById('ageGate').classList.add('hidden');
+}
+
+// ── Magnetic demo ──
+let magSeparated = false;
+
+function toggleMagSnap() {
+  magSeparated = !magSeparated;
+  const duo = document.getElementById('magDuo');
+  const stage = document.querySelector('.mag-stage');
+  const hint = document.getElementById('magTapHint');
+  const label = document.getElementById('magStateLabel');
+
+  if (magSeparated) {
+    duo.classList.add('separated');
+    stage.classList.add('separated');
+    label.textContent = 'Separated · 1g Each';
+    hint.innerHTML = '<div class="mag-tap-icon">↕</div><span>Tap to snap</span>';
+  } else {
+    duo.classList.remove('separated');
+    stage.classList.remove('separated');
+    stage.classList.add('snapping');
+    label.textContent = 'Snapped Together · 2g';
+    hint.innerHTML = '<div class="mag-tap-icon">↕</div><span>Tap to separate</span>';
+    setTimeout(() => stage.classList.remove('snapping'), 600);
+  }
+}
+
+const DUO_GRADIENTS = {
+  twilight: {
+    l: 'linear-gradient(170deg,#CC0000,#880000)',
+    r: 'linear-gradient(170deg,#444,#000)'
+  },
+  dawn: {
+    l: 'linear-gradient(170deg,#FFE84A,#D4A000)',
+    r: 'linear-gradient(170deg,#5ECDC5,#0E8880)'
+  },
+  dusk: {
+    l: 'linear-gradient(170deg,#B07EE8,#4A2480)',
+    r: 'linear-gradient(170deg,#90C8F8,#1E5FA8)'
+  }
+};
+
+function switchDuo(btn) {
+  document.querySelectorAll('.mag-pick').forEach(b => {
+    b.classList.remove('active');
+    b.style.borderColor = 'rgba(255,255,255,0.15)';
+    b.style.transform = 'scale(1)';
+  });
+  btn.classList.add('active');
+  btn.style.borderColor = '#FF2D2D';
+  btn.style.transform = 'scale(1.1)';
+
+  const duo = btn.dataset.duo;
+  const name = btn.dataset.name;
+  const type = btn.dataset.type;
+  const colors = btn.dataset.colors;
+  const grads = DUO_GRADIENTS[duo];
+
+  const devL = document.getElementById('magDevL');
+  const devR = document.getElementById('magDevR');
+  if (devL && grads) devL.querySelector('.mag-dev-body').style.background = grads.l;
+  if (devR && grads) devR.querySelector('.mag-dev-body').style.background = grads.r;
+
+  const nameEl = document.getElementById('magDuoName');
+  const typeEl = document.getElementById('magDuoType');
+  const colorsEl = document.getElementById('magDuoColors');
+  if (nameEl) { nameEl.style.opacity = '0'; setTimeout(function(){ nameEl.textContent = name; nameEl.style.opacity = '1'; }, 200); }
+  if (typeEl) typeEl.textContent = type;
+  if (colorsEl) colorsEl.innerHTML = colors;
+}
+
+// Init first duo colors on load
+// Init on script execution (DOM is ready since script is at end of body)
+(function() {
+  var devL = document.getElementById('magDevL');
+  var devR = document.getElementById('magDevR');
+  if (devL) devL.querySelector('.mag-dev-body').style.background = DUO_GRADIENTS.twilight.l;
+  if (devR) devR.querySelector('.mag-dev-body').style.background = DUO_GRADIENTS.twilight.r;
+}());
+</script>
+</body>
+</html>

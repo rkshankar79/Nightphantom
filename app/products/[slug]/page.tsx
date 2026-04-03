@@ -50,6 +50,12 @@ export default async function ProductPage({ params }: Props) {
             <p className="product-lede">{product.shortDescription}</p>
           ) : null}
 
+          {product.format === "vape" ? (
+            <p className="product-vape-tech">
+              <Link href="/vape-tech">How our magnetic AIO vape works →</Link>
+            </p>
+          ) : null}
+
           {product.images && product.images.length > 0 ? (
             <div className="product-gallery">
               {product.images.map((img, i) => {

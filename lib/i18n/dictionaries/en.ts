@@ -38,6 +38,7 @@ export const en: Messages = {
     tapCollapse: "Tap to collapse",
     tapReveal: "Tap to reveal lineup",
     findInStore: "Find in store",
+    skuGroupCount: "{count} products in this line",
     powers: {
       dawn: {
         title: "DAWN",
@@ -99,6 +100,10 @@ export const en: Messages = {
     formatFlower: "Flower",
     formatPreroll: "Pre-roll",
     formatVape: "Vape",
+  },
+  productLine: {
+    back: "← The Trinity",
+    chooseIntro: "Choose a product for details.",
   },
   privacy: {
     metaTitle: "Privacy policy — Night Phantom",

@@ -3,18 +3,25 @@
 import Link from "next/link";
 import { useCallback, useId, useState } from "react";
 import { useLocale } from "@/components/locale-context";
-import type { TrinityProductLine } from "@/lib/sanity/fetch";
-import type { ProductsByEffect, TrinityPowerId } from "@/lib/sanity/types";
+import type { Messages } from "@/lib/i18n/types";
+import type { TrinitySkuRow } from "@/lib/sanity/group-products";
+import type { TrinityPowerId } from "@/lib/sanity/types";
 
 export type { TrinityPowerId as PowerId };
 
 const POWER_ORDER: TrinityPowerId[] = ["dawn", "twilight", "dusk"];
 
 type Props = {
-  productsByEffect: ProductsByEffect;
+  skuRowsByEffect: Record<TrinityPowerId, TrinitySkuRow[]>;
 };
 
-export function TrinityCards({ productsByEffect }: Props) {
+function formatLineWord(format: string, pm: Messages["product"]): string {
+  if (format === "flower") return pm.formatFlower;
+  if (format === "preroll") return pm.formatPreroll;
+  return pm.formatVape;
+}
+
+export function TrinityCards({ skuRowsByEffect }: Props) {
   const { messages: t } = useLocale();
   const [openId, setOpenId] = useState<TrinityPowerId | null>(null);
   const sectionLabelId = useId();
@@ -50,7 +57,7 @@ export function TrinityCards({ productsByEffect }: Props) {
                   ? "trinity-twilight"
                   : "trinity-dusk";
             const expanded = openId === id;
-            const cms = productsByEffect[id]?.filter(Boolean) ?? [];
+            const rows = skuRowsByEffect[id] ?? [];
             return (
               <div key={id} className={`trinity-card-wrap ${theme}`} role="listitem">
                 <button
@@ -78,18 +85,41 @@ export function TrinityCards({ productsByEffect }: Props) {
                   className={`trinity-panel ${expanded ? "is-open" : ""}`}
                 >
                   <ul className="trinity-sku-list">
-                    {cms.length > 0
-                      ? cms.map((item: TrinityProductLine) => (
-                          <li key={item._id}>
-                            <Link
-                              href={`/products/${item.slug}`}
-                              className="trinity-product-link"
-                              onClick={(e) => e.stopPropagation()}
-                            >
-                              {item.listingLabel}
-                            </Link>
-                          </li>
-                        ))
+                    {rows.length > 0
+                      ? rows.map((row) => {
+                          if (row.kind === "single") {
+                            const item = row.product;
+                            return (
+                              <li key={item._id}>
+                                <Link
+                                  href={`/products/${item.slug}`}
+                                  className="trinity-product-link"
+                                  onClick={(e) => e.stopPropagation()}
+                                >
+                                  {item.listingLabel}
+                                </Link>
+                              </li>
+                            );
+                          }
+                          const fmt = formatLineWord(row.format, t.product);
+                          const linkText = `${p.title} ${fmt}`.toUpperCase();
+                          const aria = `${linkText}, ${tr.skuGroupCount.replace(
+                            "{count}",
+                            String(row.products.length),
+                          )}`;
+                          return (
+                            <li key={`group-${row.effect}-${row.format}`}>
+                              <Link
+                                href={`/products/line/${row.effect}/${row.format}`}
+                                className="trinity-product-link"
+                                aria-label={aria}
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                {linkText}
+                              </Link>
+                            </li>
+                          );
+                        })
                       : p.fallbacks.map((line) => <li key={line}>{line}</li>)}
                   </ul>
                   <a className="trinity-find-btn" href="#stores">

@@ -12,6 +12,18 @@ export const productsForTrinityQuery = defineQuery(`
   }
 `);
 
+export const productsByLineQuery = defineQuery(`
+  *[_type == "product" && effect == $effect && format == $format && defined(slug.current)] | order(title asc) {
+    _id,
+    title,
+    "slug": slug.current,
+    effect,
+    format,
+    listingLabel,
+    shortDescription
+  }
+`);
+
 export const productBySlugQuery = defineQuery(`
   *[_type == "product" && slug.current == $slug][0] {
     _id,

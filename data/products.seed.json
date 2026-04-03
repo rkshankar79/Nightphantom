@@ -1,0 +1,83 @@
+[
+  {
+    "title": "Morning Mist",
+    "slug": "morning-mist-flower",
+    "effect": "dawn",
+    "format": "flower",
+    "listingLabel": "Dawn flower · Morning Mist",
+    "shortDescription": "Bright, citrus-forward sativa flower for daytime focus.",
+    "thcDisplay": "—"
+  },
+  {
+    "title": "Solar Flare",
+    "slug": "solar-flare-preroll",
+    "effect": "dawn",
+    "format": "preroll",
+    "listingLabel": "Dawn pre-roll · Solar Flare",
+    "shortDescription": "Single-strain sativa pre-roll, even burn, sharp clarity.",
+    "thcDisplay": "—"
+  },
+  {
+    "title": "Aurora Beam",
+    "slug": "aurora-beam-vape",
+    "effect": "dawn",
+    "format": "vape",
+    "listingLabel": "Dawn vape · Aurora Beam",
+    "shortDescription": "Live resin–style sativa vape; crisp terp profile.",
+    "thcDisplay": "—"
+  },
+  {
+    "title": "Velvet Meridian",
+    "slug": "velvet-meridian-flower",
+    "effect": "twilight",
+    "format": "flower",
+    "listingLabel": "Twilight flower · Velvet Meridian",
+    "shortDescription": "Balanced hybrid flower; smooth body with a clear head.",
+    "thcDisplay": "—"
+  },
+  {
+    "title": "Equinox",
+    "slug": "equinox-preroll",
+    "effect": "twilight",
+    "format": "preroll",
+    "listingLabel": "Twilight pre-roll · Equinox",
+    "shortDescription": "Hybrid blend pre-roll for any time of day.",
+    "thcDisplay": "—"
+  },
+  {
+    "title": "Nebula Drift",
+    "slug": "nebula-drift-vape",
+    "effect": "twilight",
+    "format": "vape",
+    "listingLabel": "Twilight vape · Nebula Drift",
+    "shortDescription": "Hybrid cartridge; layered fruit and earth.",
+    "thcDisplay": "—"
+  },
+  {
+    "title": "Obsidian Garden",
+    "slug": "obsidian-garden-flower",
+    "effect": "dusk",
+    "format": "flower",
+    "listingLabel": "Dusk flower · Obsidian Garden",
+    "shortDescription": "Heavy indica flower; deep relaxation, evening use.",
+    "thcDisplay": "—"
+  },
+  {
+    "title": "Midnight Oil",
+    "slug": "midnight-oil-preroll",
+    "effect": "dusk",
+    "format": "preroll",
+    "listingLabel": "Dusk pre-roll · Midnight Oil",
+    "shortDescription": "Indica-dominant pre-roll for wind-down rituals.",
+    "thcDisplay": "—"
+  },
+  {
+    "title": "Void Song",
+    "slug": "void-song-vape",
+    "effect": "dusk",
+    "format": "vape",
+    "listingLabel": "Dusk vape · Void Song",
+    "shortDescription": "Indica vape; rich, calming finish.",
+    "thcDisplay": "—"
+  }
+]

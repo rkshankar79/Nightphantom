@@ -39,6 +39,8 @@ export type Messages = {
     tapCollapse: string;
     tapReveal: string;
     findInStore: string;
+    /** "{count}" = number of SKUs when one link groups several products */
+    skuGroupCount: string;
     powers: Record<
       TrinityPowerId,
       { type: string; title: string; focus: string; fallbacks: string[] }
@@ -78,6 +80,10 @@ export type Messages = {
     formatFlower: string;
     formatPreroll: string;
     formatVape: string;
+  };
+  productLine: {
+    back: string;
+    chooseIntro: string;
   };
   privacy: {
     metaTitle: string;

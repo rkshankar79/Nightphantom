@@ -12,6 +12,9 @@ export function getSanityClient(): SanityClient | null {
       dataset,
       apiVersion,
       useCdn: process.env.NODE_ENV === "production",
+      /** Avoid hanging SSR forever when the API is slow or unreachable */
+      timeout: 12_000,
+      maxRetries: 2,
     });
   }
   return _client;

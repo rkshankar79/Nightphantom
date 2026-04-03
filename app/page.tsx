@@ -5,7 +5,10 @@ import { CharacterHero } from "@/components/character-hero";
 import { SiteNav } from "@/components/site-nav";
 import { TrinityCards } from "@/components/trinity-cards";
 import { getTrinityProducts } from "@/lib/sanity/fetch";
-import { groupProductsByEffect } from "@/lib/sanity/group-products";
+import {
+  groupProductsByEffect,
+  rowsByEffectForTrinity,
+} from "@/lib/sanity/group-products";
 import { PoweredBy } from "@/components/powered-by";
 import { getLocale, getMessages } from "@/lib/i18n";
 
@@ -15,6 +18,7 @@ export default async function Home() {
   const h = t.home;
   const trinityProducts = await getTrinityProducts();
   const productsByEffect = groupProductsByEffect(trinityProducts);
+  const skuRowsByEffect = rowsByEffectForTrinity(productsByEffect);
 
   return (
     <>
@@ -32,7 +36,7 @@ export default async function Home() {
           cta={t.hero.cta}
         />
 
-        <TrinityCards productsByEffect={productsByEffect} />
+        <TrinityCards skuRowsByEffect={skuRowsByEffect} />
 
         <div className="np-quote-strip">
           <div className="np-quote-panel">

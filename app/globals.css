@@ -328,17 +328,31 @@ body {
   z-index: 0;
 }
 
-/* Square art: bias slightly left so figure + wordmark stay in frame */
+/* Cover + position: wide viewports crop top/bottom — anchor by breakpoint */
 .character-hero-img {
   object-fit: cover;
-  object-position: 44% 50%;
+  object-position: 50% 42%;
   filter: brightness(1.05) contrast(0.96) saturate(0.98);
   opacity: 1;
 }
 
+/* Phone: keeps full figure + face (mostly side-crop) */
 @media (max-width: 700px) {
   .character-hero-img {
     object-position: 50% 44%;
+  }
+}
+
+/* Tablet/desktop: pin toward top of art so hood/face aren’t clipped */
+@media (min-width: 701px) {
+  .character-hero-img {
+    object-position: 44% 22%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .character-hero-img {
+    object-position: 44% 18%;
   }
 }
 

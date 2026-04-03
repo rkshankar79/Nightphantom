@@ -1255,8 +1255,47 @@ a.trinity-product-link:hover {
 
 .cta-section .cta-copy {
   color: var(--np-text-muted);
-  max-width: 460px;
+  max-width: 520px;
+  margin: 0 auto 1.5rem;
+  position: relative;
+  z-index: 1;
+  line-height: 1.65;
+}
+
+.cta-locations {
+  list-style: none;
+  margin: 0 auto 1rem;
+  padding: 0;
+  max-width: 36rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-locations li {
+  font-family: var(--font-cinzel), serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(232, 228, 216, 0.88);
+  padding: 0.5rem 0.85rem;
+  border: 1px solid rgba(196, 181, 253, 0.22);
+  border-radius: 4px;
+  background: rgba(10, 10, 14, 0.45);
+  box-shadow: 0 0 20px rgba(129, 140, 248, 0.06);
+}
+
+.cta-locations-more {
   margin: 0 auto 1.75rem;
+  max-width: 520px;
+  font-family: var(--font-cinzel), serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--np-gold);
   position: relative;
   z-index: 1;
 }
@@ -1304,6 +1343,41 @@ a.trinity-product-link:hover {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(232, 228, 216, 0.82);
+}
+
+.cta-email-block {
+  margin: 1.35rem 0 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cta-email-intro {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--np-text-muted);
+  margin-bottom: 0.45rem;
+  line-height: 1.5;
+}
+
+.cta-email {
+  font-family: var(--font-cinzel), serif;
+  font-size: clamp(0.85rem, 2.2vw, 1rem);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #c4d4ff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(165, 180, 252, 0.35);
+  padding-bottom: 2px;
+  word-break: break-all;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.cta-email:hover {
+  color: #fff;
+  border-bottom-color: rgba(224, 231, 255, 0.55);
 }
 
 .btn-ghost {
@@ -1612,6 +1686,29 @@ a.trinity-product-link:hover {
 }
 
 .contact-phone:hover {
+  color: #fff;
+}
+
+.contact-email-intro {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--np-text-muted);
+  margin: 0 0 0.65rem;
+}
+
+.contact-email {
+  font-family: var(--font-cinzel), serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #e0e7ff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(165, 180, 252, 0.35);
+  padding-bottom: 2px;
+  word-break: break-all;
+}
+
+.contact-email:hover {
   color: #fff;
 }
 

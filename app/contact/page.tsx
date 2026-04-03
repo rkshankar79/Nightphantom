@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { PoweredBy } from "@/components/powered-by";
 import { SiteNav } from "@/components/site-nav";
 import { getLocale, getMessages } from "@/lib/i18n";
+import { NP_INFO_EMAIL, NP_INFO_MAILTO } from "@/lib/site-contact";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -35,6 +36,14 @@ export default async function ContactPage() {
             <p>
               <a className="contact-phone" href="tel:+12179633013">
                 217-963-3013
+              </a>
+            </p>
+
+            <h2 className="contact-card-heading">{c.emailHeading}</h2>
+            <p className="contact-email-intro">{c.emailIntro}</p>
+            <p>
+              <a className="contact-email" href={NP_INFO_MAILTO}>
+                {NP_INFO_EMAIL}
               </a>
             </p>
 

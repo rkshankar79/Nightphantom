@@ -54,6 +54,11 @@ export type Messages = {
     storyBody: string;
     ctaTitle: string;
     ctaCopy: string;
+    /** Illinois market / city names shown in the Find us block */
+    ctaLocations: string[];
+    ctaLocationsMore: string;
+    /** Line before mailto on home CTA */
+    ctaEmailIntro: string;
     contactUs: string;
     footerRights: string;
     footerDisclaimer: string;
@@ -67,6 +72,8 @@ export type Messages = {
     title: string;
     lede: string;
     phoneHeading: string;
+    emailHeading: string;
+    emailIntro: string;
     facilityHeading: string;
     mapLink: string;
     disclaimer: string;

@@ -69,7 +69,18 @@ export const es: Messages = {
       "Night Phantom es más que una marca: es un universo. Nacida de las sombras e inspirada en personajes de fuerza y valor, representamos pureza, poder y creatividad sin miedo.",
     ctaTitle: "Encuéntranos en Illinois",
     ctaCopy:
-      "Solo dispensarios con licencia. No vendemos en línea — pide Night Phantom en tu dispensario.",
+      "Disponible en dispensarios con licencia en estos mercados. No vendemos en línea — pide Night Phantom en tu dispensario.",
+    ctaLocations: [
+      "Decatur",
+      "Lincoln",
+      "Olive Branch",
+      "Belleville",
+      "Springfield",
+      "Peoria",
+      "Champaign",
+    ],
+    ctaLocationsMore: "Más ubicaciones próximamente.",
+    ctaEmailIntro: "Consultas, incidencias de producto o colaboraciones:",
     contactUs: "Contáctanos",
     footerRights: "Night Phantom. Todos los derechos reservados.",
     footerDisclaimer:
@@ -79,12 +90,15 @@ export const es: Messages = {
   contact: {
     metaTitle: "Contacto — Night Phantom",
     metaDescription:
-      "Contacto Night Phantom / Indus365 Grow LLC en Harristown, Illinois. Teléfono 217-963-3013.",
+      "Contacto Night Phantom / Indus365 Grow LLC. Teléfono 217-963-3013. Correo info@nightphantomhq.com para consultas, incidencias de producto o colaboraciones.",
     back: "← Inicio",
     label: "Contacto",
     title: "Contáctanos",
     lede: "Para mayoristas, información de la instalación o consultas generales sobre Night Phantom, usa los datos siguientes. Los productos de cannabis se venden solo en dispensarios licenciados de Illinois — no desde este sitio.",
     phoneHeading: "Teléfono",
+    emailHeading: "Correo",
+    emailIntro:
+      "Para consultas, incidencias de producto o colaboraciones — te responderemos lo antes posible.",
     facilityHeading: "Instalación",
     mapLink: "Abrir mapa (Harristown, IL)",
     disclaimer:

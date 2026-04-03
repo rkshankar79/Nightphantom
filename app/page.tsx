@@ -11,6 +11,7 @@ import {
 } from "@/lib/sanity/group-products";
 import { PoweredBy } from "@/components/powered-by";
 import { getLocale, getMessages } from "@/lib/i18n";
+import { NP_INFO_EMAIL, NP_INFO_MAILTO } from "@/lib/site-contact";
 
 export default async function Home() {
   const locale = await getLocale();
@@ -61,6 +62,12 @@ export default async function Home() {
           />
           <h2 id="cta-heading">{h.ctaTitle}</h2>
           <p className="cta-copy">{h.ctaCopy}</p>
+          <ul className="cta-locations" aria-label={h.ctaTitle}>
+            {h.ctaLocations.map((city) => (
+              <li key={city}>{city}</li>
+            ))}
+          </ul>
+          <p className="cta-locations-more">{h.ctaLocationsMore}</p>
           <div className="cta-contact-block">
             <p className="cta-phone-wrap">
               <a className="cta-phone" href="tel:+12179633013">
@@ -71,6 +78,12 @@ export default async function Home() {
               <span className="cta-facility-name">Indus365 Grow LLC</span>
               <br />
               Harristown, IL
+            </p>
+            <p className="cta-email-block">
+              <span className="cta-email-intro">{h.ctaEmailIntro}</span>
+              <a className="cta-email" href={NP_INFO_MAILTO}>
+                {NP_INFO_EMAIL}
+              </a>
             </p>
           </div>
           <Link className="btn-ghost" href="/contact">

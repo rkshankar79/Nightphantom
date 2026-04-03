@@ -400,7 +400,7 @@ body {
   inset: 0;
   overflow: hidden;
   transform-origin: 50% 42%;
-  animation: hero-image-drift 22s ease-in-out infinite;
+  animation: hero-image-drift 16s ease-in-out infinite;
 }
 
 /* Cover + position: wide viewports crop top/bottom — anchor by breakpoint */
@@ -414,10 +414,10 @@ body {
 @keyframes hero-image-drift {
   0%,
   100% {
-    transform: scale(1);
+    transform: scale(1) translateY(0);
   }
   50% {
-    transform: scale(1.07);
+    transform: scale(1.14) translateY(-1.2%);
   }
 }
 
@@ -544,8 +544,8 @@ body {
   margin: 0;
   text-align: center;
   font-family: var(--font-bangers), cursive;
-  font-size: clamp(0.72rem, 2.2vw, 0.95rem);
-  letter-spacing: 0.42em;
+  font-size: clamp(1rem, 3.35vw, 1.38rem);
+  letter-spacing: 0.34em;
   text-transform: uppercase;
   color: rgba(230, 210, 255, 0.92);
   opacity: 0.88;

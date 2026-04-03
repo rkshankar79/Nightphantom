@@ -13,8 +13,8 @@ export function CharacterHero() {
 
       <div className="character-hero-media">
         <Image
-          src="/np-hero-modern.png"
-          alt="Night Phantom — hero in a dynamic pose over a teal night city, purple mask and logo, Untamed Spirit."
+          src="/np-hero-main.png"
+          alt="Night Phantom — hooded hero leaping over a night city, teal glow, chest emblem, Night Phantom wordmark."
           fill
           priority
           sizes="100vw"

@@ -34,14 +34,14 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/np-hero-modern.png",
-        alt: "Night Phantom hero over a teal night city — modern comic illustration.",
+        url: "/np-hero-main.png",
+        alt: "Night Phantom — comic hero over a night skyline with brand mark.",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/np-hero-modern.png"],
+    images: ["/np-hero-main.png"],
   },
 };
 

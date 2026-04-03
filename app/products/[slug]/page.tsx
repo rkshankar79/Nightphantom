@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PortableText } from "next-sanity";
 import type { Metadata } from "next";
+import { PoweredBy } from "@/components/powered-by";
 import { SiteNav } from "@/components/site-nav";
 import { getProductBySlug, getTrinityProducts } from "@/lib/sanity/fetch";
 import { getLocale, getMessages } from "@/lib/i18n";
@@ -111,6 +112,7 @@ export default async function ProductPage({ params }: Props) {
               {ui.home.privacyLink}
             </Link>
           </p>
+          <PoweredBy />
         </div>
       </main>
     </>

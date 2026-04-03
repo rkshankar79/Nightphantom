@@ -164,4 +164,8 @@ export const es: Messages = {
       },
     ],
   },
+  site: {
+    poweredByLead: "Impulsado por",
+    poweredByName: "Sour Diesel Group",
+  },
 };

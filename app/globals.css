@@ -394,6 +394,15 @@ body {
   z-index: 0;
 }
 
+/* Wrapper clips scaled image so slow zoom stays inside the frame */
+.character-hero-img-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  transform-origin: 50% 42%;
+  animation: hero-image-drift 22s ease-in-out infinite;
+}
+
 /* Cover + position: wide viewports crop top/bottom — anchor by breakpoint */
 .character-hero-img {
   object-fit: cover;
@@ -402,10 +411,42 @@ body {
   opacity: 1;
 }
 
+@keyframes hero-image-drift {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.07);
+  }
+}
+
+/* Own layer above the photo, below lift/scrim — previous ::after sat under them and never showed */
+.character-hero-vignette {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 64px;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 78% 70% at 50% 36%,
+    transparent 0%,
+    transparent 38%,
+    rgba(4, 4, 8, 0.55) 88%,
+    rgba(2, 2, 6, 0.82) 100%
+  );
+}
+
 /* Phone: keeps full figure + face (mostly side-crop) */
 @media (max-width: 700px) {
   .character-hero-img {
     object-position: 50% 44%;
+  }
+
+  .character-hero-img-wrap {
+    transform-origin: 50% 44%;
   }
 }
 
@@ -414,11 +455,19 @@ body {
   .character-hero-img {
     object-position: 44% 22%;
   }
+
+  .character-hero-img-wrap {
+    transform-origin: 44% 22%;
+  }
 }
 
 @media (min-width: 1200px) {
   .character-hero-img {
     object-position: 44% 18%;
+  }
+
+  .character-hero-img-wrap {
+    transform-origin: 44% 18%;
   }
 }
 
@@ -429,7 +478,7 @@ body {
   right: 0;
   top: 64px;
   bottom: 0;
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
   background: radial-gradient(
     ellipse 95% 70% at 50% 28%,
@@ -447,7 +496,7 @@ body {
   right: 0;
   top: 64px;
   bottom: 0;
-  z-index: 2;
+  z-index: 3;
   pointer-events: none;
   background: linear-gradient(
     180deg,
@@ -465,7 +514,7 @@ body {
   right: 0;
   top: 64px;
   bottom: 0;
-  z-index: 3;
+  z-index: 4;
   pointer-events: none;
   background: radial-gradient(
     ellipse 120% 55% at 50% 100%,
@@ -510,6 +559,12 @@ body {
   .character-hero-tagline {
     bottom: 5rem;
     letter-spacing: 0.32em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .character-hero-img-wrap {
+    animation: none;
   }
 }
 
@@ -1178,6 +1233,34 @@ a.trinity-product-link:hover {
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+.np-powered-by {
+  flex: 0 0 100%;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  padding-top: 1rem;
+  margin-top: 0.25rem;
+  border-top: 1px solid rgba(196, 181, 253, 0.08);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: var(--np-text-dim);
+}
+
+.np-powered-by a {
+  color: rgba(196, 181, 253, 0.65);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(196, 181, 253, 0.22);
+  padding-bottom: 1px;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.np-powered-by a:hover {
+  color: #e0e7ff;
+  border-bottom-color: rgba(224, 231, 255, 0.45);
 }
 
 .np-footer-left {

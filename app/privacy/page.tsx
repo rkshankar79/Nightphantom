@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { PoweredBy } from "@/components/powered-by";
 import { SiteNav } from "@/components/site-nav";
 import { getLocale, getMessages } from "@/lib/i18n";
 
@@ -37,6 +38,7 @@ export default async function PrivacyPage() {
               </section>
             ))}
           </div>
+          <PoweredBy />
         </div>
       </main>
     </>

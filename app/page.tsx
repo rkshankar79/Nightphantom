@@ -6,6 +6,7 @@ import { SiteNav } from "@/components/site-nav";
 import { TrinityCards } from "@/components/trinity-cards";
 import { getTrinityProducts } from "@/lib/sanity/fetch";
 import { groupProductsByEffect } from "@/lib/sanity/group-products";
+import { PoweredBy } from "@/components/powered-by";
 import { getLocale, getMessages } from "@/lib/i18n";
 
 export default async function Home() {
@@ -83,6 +84,7 @@ export default async function Home() {
             </Link>
           </div>
           <p className="footer-disclaimer">{h.footerDisclaimer}</p>
+          <PoweredBy />
         </footer>
       </main>
     </>

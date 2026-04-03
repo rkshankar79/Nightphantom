@@ -87,4 +87,8 @@ export type Messages = {
     updated: string;
     sections: { heading: string; paragraphs: string[] }[];
   };
+  site: {
+    poweredByLead: string;
+    poweredByName: string;
+  };
 };

@@ -19,16 +19,19 @@ export function CharacterHero({ srTitle, imageAlt, tagline, cta }: Props) {
       </h1>
 
       <div className="character-hero-media">
-        <Image
-          src="/np-hero-main.png"
-          alt={imageAlt}
-          fill
-          priority
-          sizes="100vw"
-          className="character-hero-img"
-          unoptimized
-        />
+        <div className="character-hero-img-wrap">
+          <Image
+            src="/np-hero-main.png"
+            alt={imageAlt}
+            fill
+            priority
+            sizes="100vw"
+            className="character-hero-img"
+            unoptimized
+          />
+        </div>
       </div>
+      <div className="character-hero-vignette" aria-hidden />
       <div className="character-hero-lift" aria-hidden />
       <div className="character-hero-scrim" aria-hidden />
       <div className="character-hero-gradient" aria-hidden />

@@ -47,9 +47,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const power = ui.trinity.powers[effect as TrinityPowerId];
   const fmt = formatWord(format, ui.product);
   const line = `${power.title} ${fmt}`.replace(/\s+/g, " ").trim();
+  const path = `/products/line/${effect}/${format}`;
   return {
     title: `${line} — Night Phantom`,
     description: ui.productLine.chooseIntro,
+    alternates: { canonical: path },
+    openGraph: {
+      title: `${line} — Night Phantom`,
+      description: ui.productLine.chooseIntro,
+      type: "website",
+      url: path,
+    },
   };
 }
 

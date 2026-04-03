@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { AgeGate } from "@/components/age-gate";
 import { CharacterHero } from "@/components/character-hero";
 import { SiteNav } from "@/components/site-nav";
@@ -12,6 +13,10 @@ import {
 import { PoweredBy } from "@/components/powered-by";
 import { getLocale, getMessages } from "@/lib/i18n";
 import { NP_INFO_EMAIL, NP_INFO_MAILTO } from "@/lib/site-contact";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default async function Home() {
   const locale = await getLocale();

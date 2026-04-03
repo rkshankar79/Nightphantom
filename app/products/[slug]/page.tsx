@@ -22,9 +22,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const locale = await getLocale();
     return { title: locale === "es" ? "Producto" : "Product" };
   }
+  const desc = product.shortDescription || product.listingLabel;
+  const path = `/products/${slug}`;
   return {
     title: `${product.title} — Night Phantom`,
-    description: product.shortDescription || product.listingLabel,
+    description: desc,
+    alternates: { canonical: path },
+    openGraph: {
+      title: `${product.title} — Night Phantom`,
+      description: desc,
+      type: "website",
+      url: path,
+    },
   };
 }
 

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Bangers, Cinzel, Inter } from "next/font/google";
 import { LocaleProvider } from "@/components/locale-context";
+import { SiteJsonLd } from "@/components/site-json-ld";
 import { getLocale, getMessages } from "@/lib/i18n";
+import { absoluteUrl, getMetadataBase, siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const bangers = Bangers({
@@ -25,25 +27,49 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nightphantomhq.com"),
+  metadataBase: getMetadataBase(),
   title: "Night Phantom — Untamed Spirit",
   description:
     "Comic-book inspired cannabis brand. Premium vapes and more. For adults 21+ in legal jurisdictions only.",
+  applicationName: "Night Phantom",
+  keywords: [
+    "Night Phantom",
+    "cannabis",
+    "Illinois",
+    "vape",
+    "Indus365",
+    "licensed dispensary",
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
+  icons: {
+    icon: [{ url: "/nplogo.png", type: "image/png", sizes: "any" }],
+    apple: [{ url: "/nplogo.png", type: "image/png" }],
+    shortcut: "/nplogo.png",
+  },
   openGraph: {
     title: "Night Phantom — Untamed Spirit",
     description:
       "Comic-book inspired cannabis brand. Premium vapes and more. For adults 21+ in legal jurisdictions only.",
     type: "website",
+    locale: "en_US",
+    siteName: "Night Phantom",
+    url: siteUrl(),
     images: [
       {
         url: "/np-hero-main.png",
+        width: 1200,
+        height: 630,
         alt: "Night Phantom — comic hero over a night skyline with brand mark.",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/np-hero-main.png"],
+    images: [absoluteUrl("/np-hero-main.png")],
   },
 };
 
@@ -61,6 +87,7 @@ export default async function RootLayout({
       className={`${bangers.variable} ${cinzel.variable} ${inter.variable} h-full`}
     >
       <body className="min-h-full antialiased">
+        <SiteJsonLd />
         <LocaleProvider locale={locale} messages={messages}>
           {children}
         </LocaleProvider>

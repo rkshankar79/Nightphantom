@@ -11,6 +11,13 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: t.contact.metaTitle,
     description: t.contact.metaDescription,
+    alternates: { canonical: "/contact" },
+    openGraph: {
+      title: t.contact.metaTitle,
+      description: t.contact.metaDescription,
+      type: "website",
+      url: "/contact",
+    },
   };
 }
 

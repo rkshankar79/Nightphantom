@@ -1,6 +1,13 @@
 import Image from "next/image";
 
-export function CharacterHero() {
+type Props = {
+  srTitle: string;
+  imageAlt: string;
+  tagline: string;
+  cta: string;
+};
+
+export function CharacterHero({ srTitle, imageAlt, tagline, cta }: Props) {
   return (
     <section
       className="character-hero"
@@ -8,13 +15,13 @@ export function CharacterHero() {
       aria-labelledby="character-hero-heading"
     >
       <h1 id="character-hero-heading" className="character-hero-sr-title">
-        Night Phantom — Untamed Spirit
+        {srTitle}
       </h1>
 
       <div className="character-hero-media">
         <Image
           src="/np-hero-main.png"
-          alt="Night Phantom — hooded hero leaping over a night city, teal glow, chest emblem, Night Phantom wordmark."
+          alt={imageAlt}
           fill
           priority
           sizes="100vw"
@@ -26,11 +33,11 @@ export function CharacterHero() {
       <div className="character-hero-scrim" aria-hidden />
       <div className="character-hero-gradient" aria-hidden />
 
-      <p className="character-hero-tagline">Untamed Spirit</p>
+      <p className="character-hero-tagline">{tagline}</p>
 
       <div className="hero-cta-bar">
         <a className="hero-cta-link" href="#trinity">
-          Choose your power
+          {cta}
         </a>
       </div>
     </section>

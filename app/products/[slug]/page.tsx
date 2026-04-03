@@ -5,6 +5,7 @@ import { PortableText } from "next-sanity";
 import type { Metadata } from "next";
 import { SiteNav } from "@/components/site-nav";
 import { getProductBySlug, getTrinityProducts } from "@/lib/sanity/fetch";
+import { getLocale, getMessages } from "@/lib/i18n";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -16,7 +17,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const product = await getProductBySlug(slug);
-  if (!product) return { title: "Product" };
+  if (!product) {
+    const locale = await getLocale();
+    return { title: locale === "es" ? "Producto" : "Product" };
+  }
   return {
     title: `${product.title} — Night Phantom`,
     description: product.shortDescription || product.listingLabel,
@@ -28,10 +32,16 @@ export default async function ProductPage({ params }: Props) {
   const product = await getProductBySlug(slug);
   if (!product) notFound();
 
+  const locale = await getLocale();
+  const ui = getMessages(locale);
+  const p = ui.product;
+
   const formatLabel =
     product.format === "preroll"
-      ? "Pre-roll"
-      : product.format.charAt(0).toUpperCase() + product.format.slice(1);
+      ? p.formatPreroll
+      : product.format === "vape"
+        ? p.formatVape
+        : p.formatFlower;
 
   return (
     <>
@@ -39,12 +49,14 @@ export default async function ProductPage({ params }: Props) {
       <main className="product-page" id="main-content">
         <div className="product-page-inner np-section">
           <Link className="product-back" href="/#trinity">
-            ← The Trinity
+            {p.back}
           </Link>
           <p className="section-label">{formatLabel}</p>
           <h1 className="product-title">{product.title}</h1>
           {product.thcDisplay ? (
-            <p className="product-meta">THC (label): {product.thcDisplay}</p>
+            <p className="product-meta">
+              {p.thcPrefix} {product.thcDisplay}
+            </p>
           ) : null}
           {product.shortDescription ? (
             <p className="product-lede">{product.shortDescription}</p>
@@ -52,7 +64,7 @@ export default async function ProductPage({ params }: Props) {
 
           {product.format === "vape" ? (
             <p className="product-vape-tech">
-              <Link href="/vape-tech">How our magnetic AIO vape works →</Link>
+              <Link href="/vape-tech">{p.vapeTechLink}</Link>
             </p>
           ) : null}
 
@@ -87,14 +99,17 @@ export default async function ProductPage({ params }: Props) {
           {product.coaUrl ? (
             <p className="product-coa">
               <a href={product.coaUrl} target="_blank" rel="noopener noreferrer">
-                View COA / lab information
+                {p.coaLink}
               </a>
             </p>
           ) : null}
 
-          <p className="product-disclaimer">
-            For adults 21+ in legal jurisdictions. Not sold on this site — ask your
-            dispensary.
+          <p className="product-disclaimer">{p.disclaimer}</p>
+
+          <p className="contact-privacy-wrap">
+            <Link className="footer-privacy-link" href="/privacy">
+              {ui.home.privacyLink}
+            </Link>
           </p>
         </div>
       </main>

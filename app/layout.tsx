@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Bangers, Cinzel, Inter } from "next/font/google";
+import { LocaleProvider } from "@/components/locale-context";
+import { getLocale, getMessages } from "@/lib/i18n";
 import "./globals.css";
 
 const bangers = Bangers({
@@ -45,17 +47,24 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+  const messages = getMessages(locale);
+
   return (
     <html
-      lang="en"
+      lang={locale}
       className={`${bangers.variable} ${cinzel.variable} ${inter.variable} h-full`}
     >
-      <body className="min-h-full antialiased">{children}</body>
+      <body className="min-h-full antialiased">
+        <LocaleProvider locale={locale} messages={messages}>
+          {children}
+        </LocaleProvider>
+      </body>
     </html>
   );
 }

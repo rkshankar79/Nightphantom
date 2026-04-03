@@ -1,10 +1,12 @@
 "use client";
 
 import { useLayoutEffect, useState } from "react";
+import { useLocale } from "@/components/locale-context";
 
 const STORAGE_KEY = "np_age_verified";
 
 export function AgeGate() {
+  const { messages: t } = useLocale();
   const [show, setShow] = useState(true);
 
   useLayoutEffect(() => {
@@ -30,11 +32,11 @@ export function AgeGate() {
 
   return (
     <div className="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-gate-title">
-      <h3 id="age-gate-title">Are you 21 or older?</h3>
-      <p>You must be of legal cannabis age to enter. Please verify your age.</p>
+      <h3 id="age-gate-title">{t.ageGate.title}</h3>
+      <p>{t.ageGate.body}</p>
       <div className="age-btns">
         <button type="button" className="btn-primary" onClick={enter}>
-          Yes, I&apos;m 21+
+          {t.ageGate.yes}
         </button>
         <button
           type="button"
@@ -43,12 +45,10 @@ export function AgeGate() {
             window.location.href = "https://www.google.com";
           }}
         >
-          No
+          {t.ageGate.no}
         </button>
       </div>
-      <p style={{ fontSize: "0.7rem", color: "var(--np-text-dim)" }}>
-        For legal jurisdictions only. Keep out of reach of children.
-      </p>
+      <p style={{ fontSize: "0.7rem", color: "var(--np-text-dim)" }}>{t.ageGate.footnote}</p>
     </div>
   );
 }

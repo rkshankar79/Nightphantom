@@ -2,52 +2,23 @@
 
 import Link from "next/link";
 import { useCallback, useId, useState } from "react";
+import { useLocale } from "@/components/locale-context";
 import type { TrinityProductLine } from "@/lib/sanity/fetch";
 import type { ProductsByEffect, TrinityPowerId } from "@/lib/sanity/types";
 
 export type { TrinityPowerId as PowerId };
 
-const POWERS: {
-  id: TrinityPowerId;
-  title: string;
-  type: string;
-  focus: string;
-  theme: "trinity-dawn" | "trinity-twilight" | "trinity-dusk";
-  fallbackLabels: readonly string[];
-}[] = [
-  {
-    id: "dawn",
-    title: "DAWN",
-    type: "Sativa",
-    focus: "Energy · Focus · Rising",
-    theme: "trinity-dawn",
-    fallbackLabels: ["Dawn flower", "Dawn pre-roll", "Dawn vape"],
-  },
-  {
-    id: "twilight",
-    title: "TWILIGHT",
-    type: "Hybrid",
-    focus: "Balance · Creativity · Flow",
-    theme: "trinity-twilight",
-    fallbackLabels: ["Twilight flower", "Twilight pre-roll", "Twilight vape"],
-  },
-  {
-    id: "dusk",
-    title: "DUSK",
-    type: "Indica",
-    focus: "Rest · Recovery · The night",
-    theme: "trinity-dusk",
-    fallbackLabels: ["Dusk flower", "Dusk pre-roll", "Dusk vape"],
-  },
-];
+const POWER_ORDER: TrinityPowerId[] = ["dawn", "twilight", "dusk"];
 
 type Props = {
   productsByEffect: ProductsByEffect;
 };
 
 export function TrinityCards({ productsByEffect }: Props) {
+  const { messages: t } = useLocale();
   const [openId, setOpenId] = useState<TrinityPowerId | null>(null);
   const sectionLabelId = useId();
+  const tr = t.trinity;
 
   const toggle = useCallback((id: TrinityPowerId) => {
     setOpenId((cur) => (cur === id ? null : id));
@@ -62,51 +33,51 @@ export function TrinityCards({ productsByEffect }: Props) {
       <div className="trinity-bg" aria-hidden />
       <div className="trinity-inner">
         <p className="section-label trinity-section-label" id={sectionLabelId}>
-          Choose your power
+          {tr.sectionLabel}
         </p>
-        <h2 className="trinity-headline">The Trinity</h2>
-        <p className="trinity-lede">
-          Three effects. Three ways in. Tap a card to see what we make under each
-          spirit — then find it on shelves (never sold online).
-        </p>
+        <h2 className="trinity-headline">{tr.headline}</h2>
+        <p className="trinity-lede">{tr.lede}</p>
 
         <div className="trinity-grid" role="list">
-          {POWERS.map((p) => {
-            const expanded = openId === p.id;
-            const cms = productsByEffect[p.id]?.filter(Boolean) ?? [];
+          {POWER_ORDER.map((id) => {
+            const p = tr.powers[id];
+            const theme =
+              id === "dawn"
+                ? "trinity-dawn"
+                : id === "twilight"
+                  ? "trinity-twilight"
+                  : "trinity-dusk";
+            const expanded = openId === id;
+            const cms = productsByEffect[id]?.filter(Boolean) ?? [];
             return (
-              <div
-                key={p.id}
-                className={`trinity-card-wrap ${p.theme}`}
-                role="listitem"
-              >
+              <div key={id} className={`trinity-card-wrap ${theme}`} role="listitem">
                 <button
                   type="button"
-                  className={`trinity-card ${p.theme} ${expanded ? "is-open" : ""}`}
-                  onClick={() => toggle(p.id)}
+                  className={`trinity-card ${theme} ${expanded ? "is-open" : ""}`}
+                  onClick={() => toggle(id)}
                   aria-expanded={expanded}
-                  aria-controls={`trinity-panel-${p.id}`}
-                  id={`trinity-trigger-${p.id}`}
+                  aria-controls={`trinity-panel-${id}`}
+                  id={`trinity-trigger-${id}`}
                 >
                   <span className="trinity-card-shimmer" aria-hidden />
                   <span className="trinity-card-type">{p.type}</span>
                   <span className="trinity-card-title">{p.title}</span>
                   <span className="trinity-card-focus">{p.focus}</span>
                   <span className="trinity-card-hint">
-                    {expanded ? "Tap to collapse" : "Tap to reveal lineup"}
+                    {expanded ? tr.tapCollapse : tr.tapReveal}
                   </span>
                 </button>
 
                 <div
-                  id={`trinity-panel-${p.id}`}
+                  id={`trinity-panel-${id}`}
                   role="region"
-                  aria-labelledby={`trinity-trigger-${p.id}`}
+                  aria-labelledby={`trinity-trigger-${id}`}
                   aria-hidden={!expanded}
                   className={`trinity-panel ${expanded ? "is-open" : ""}`}
                 >
                   <ul className="trinity-sku-list">
                     {cms.length > 0
-                      ? cms.map((item) => (
+                      ? cms.map((item: TrinityProductLine) => (
                           <li key={item._id}>
                             <Link
                               href={`/products/${item.slug}`}
@@ -117,12 +88,10 @@ export function TrinityCards({ productsByEffect }: Props) {
                             </Link>
                           </li>
                         ))
-                      : p.fallbackLabels.map((line) => (
-                          <li key={line}>{line}</li>
-                        ))}
+                      : p.fallbacks.map((line) => <li key={line}>{line}</li>)}
                   </ul>
                   <a className="trinity-find-btn" href="#stores">
-                    Find in store
+                    {tr.findInStore}
                   </a>
                 </div>
               </div>

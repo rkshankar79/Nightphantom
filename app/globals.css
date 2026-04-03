@@ -55,27 +55,28 @@ body {
 }
 
 /* Skip link */
+/* First Tab target: keyboard / screen-reader users jump past nav to #main-content. Hidden until :focus-visible. */
 .skip-link {
   position: absolute;
   left: 1rem;
   top: -120px;
   z-index: 10001;
   padding: 0.65rem 1.1rem;
-  background: linear-gradient(135deg, #6366f1, #4338ca);
-  color: #fff;
+  background: rgba(10, 10, 14, 0.96);
+  color: #f5f5f4;
   font-family: var(--font-cinzel), serif;
   font-size: 0.7rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(196, 181, 253, 0.45);
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.45);
 }
 
-.skip-link:focus,
 .skip-link:focus-visible {
   top: 1rem;
-  outline: 2px solid #c4b5fd;
+  outline: 2px solid var(--np-gold-light);
   outline-offset: 3px;
 }
 

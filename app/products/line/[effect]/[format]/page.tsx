@@ -80,7 +80,7 @@ export default async function ProductLinePage({ params }: Props) {
           <ul className="trinity-sku-list product-line-skus">
             {products.map((item) => (
               <li key={item._id}>
-                <Link href={`/products/${item.slug}`} className="trinity-product-link">
+                <Link href={`/products/${item.slug}`} className="product-line-title-link">
                   {item.title}
                 </Link>
               </li>

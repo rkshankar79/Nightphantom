@@ -1003,6 +1003,53 @@ a.trinity-product-link:hover {
   border-bottom-color: color-mix(in srgb, var(--trinity-neon) 70%, transparent);
 }
 
+/* Product lineup page (/products/line/…) — titles read as hero picks, not panel microcopy */
+.product-line-skus {
+  margin-top: 0.35rem;
+  margin-bottom: 2rem;
+}
+
+.product-line-skus li {
+  font-size: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  padding: 0.9rem 0;
+}
+
+.product-line-skus .product-line-title-link {
+  font-family: var(--font-bangers), cursive;
+  font-size: clamp(1.5rem, 5vw, 2.35rem);
+  letter-spacing: 0.05em;
+  line-height: 1.15;
+  color: #f5f3ff;
+  text-decoration: none;
+  border-bottom: none;
+  display: inline-block;
+  text-shadow:
+    0 0 28px rgba(167, 139, 250, 0.45),
+    0 0 52px rgba(99, 102, 241, 0.2),
+    2px 2px 0 rgba(0, 0, 0, 0.35);
+  transition:
+    color 0.2s ease,
+    text-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.product-line-skus .product-line-title-link:hover {
+  color: #fff;
+  text-shadow:
+    0 0 36px rgba(167, 139, 250, 0.65),
+    0 0 72px rgba(139, 92, 246, 0.3),
+    2px 2px 0 rgba(0, 0, 0, 0.4);
+  transform: translateX(3px);
+}
+
+.product-line-skus .product-line-title-link:focus-visible {
+  outline: 2px solid rgba(196, 181, 253, 0.85);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
 .trinity-find-btn {
   display: inline-block;
   font-family: var(--font-cinzel), serif;

@@ -32,11 +32,13 @@ export function TrinityCards({ productsByEffect }: Props) {
     >
       <div className="trinity-bg" aria-hidden />
       <div className="trinity-inner">
-        <p className="section-label trinity-section-label" id={sectionLabelId}>
-          {tr.sectionLabel}
-        </p>
-        <h2 className="trinity-headline">{tr.headline}</h2>
-        <p className="trinity-lede">{tr.lede}</p>
+        <div className="trinity-intro">
+          <p className="section-label trinity-section-label" id={sectionLabelId}>
+            {tr.sectionLabel}
+          </p>
+          <h2 className="trinity-headline">{tr.headline}</h2>
+          <p className="trinity-lede">{tr.lede}</p>
+        </div>
 
         <div className="trinity-grid" role="list">
           {POWER_ORDER.map((id) => {

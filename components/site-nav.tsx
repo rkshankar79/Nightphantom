@@ -12,9 +12,9 @@ export function SiteNav() {
   const close = useCallback(() => setOpen(false), []);
 
   const links: { href: string; label: string; external?: true }[] = [
-    { href: "#trinity", label: n.trinity },
+    { href: "/#trinity", label: n.trinity },
     { href: "/vape-tech", label: n.vapeTech },
-    { href: "#story", label: n.story },
+    { href: "/#story", label: n.story },
     { href: "/contact", label: n.contact },
   ];
 

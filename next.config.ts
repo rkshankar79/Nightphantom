@@ -17,16 +17,8 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  async redirects() {
-    return [
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.nightphantomhq.com" }],
-        destination: "https://nightphantomhq.com/:path*",
-        permanent: true,
-      },
-    ];
-  },
+  // Domain canonicalization: configure only in Vercel (Domains). A www↔apex
+  // redirect here plus Vercel’s opposite redirect causes an infinite loop.
   async rewrites() {
     return [{ source: "/vape-tech", destination: "/vape-tech.html" }];
   },

@@ -17,6 +17,16 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.nightphantomhq.com" }],
+        destination: "https://nightphantomhq.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async rewrites() {
     return [{ source: "/vape-tech", destination: "/vape-tech.html" }];
   },

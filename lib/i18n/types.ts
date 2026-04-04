@@ -54,7 +54,7 @@ export type Messages = {
     quoteDotsLabel: string;
     storyLabel: string;
     storyTitle: string;
-    storyBody: string;
+    storyParagraphs: string[];
     ctaTitle: string;
     ctaCopy: string;
     /** Illinois market / city names shown in the Find us block */

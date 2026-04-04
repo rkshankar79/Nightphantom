@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { Bangers, Cinzel, Inter } from "next/font/google";
 import { LocaleProvider } from "@/components/locale-context";
@@ -6,6 +7,8 @@ import { SiteJsonLd } from "@/components/site-json-ld";
 import { getLocale, getMessages } from "@/lib/i18n";
 import { absoluteUrl, getMetadataBase, siteUrl } from "@/lib/site";
 import "./globals.css";
+
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 const bangers = Bangers({
   weight: "400",
@@ -88,6 +91,17 @@ export default async function RootLayout({
       className={`${bangers.variable} ${cinzel.variable} ${inter.variable} h-full`}
     >
       <body className="min-h-full antialiased">
+        {GA_MEASUREMENT_ID ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-gtag" strategy="afterInteractive">
+              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_MEASUREMENT_ID}');`}
+            </Script>
+          </>
+        ) : null}
         <SiteJsonLd />
         <LocaleProvider locale={locale} messages={messages}>
           {children}

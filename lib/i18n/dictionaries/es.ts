@@ -73,8 +73,11 @@ export const es: Messages = {
     quoteDotsLabel: "Elegir una cita",
     storyLabel: "Universo",
     storyTitle: "Historia",
-    storyBody:
-      "Night Phantom es más que una marca: es un universo. Nacida de las sombras e inspirada en personajes de fuerza y valor, representamos pureza, poder y creatividad sin miedo.",
+    storyParagraphs: [
+      "Chicago no duerme — cambia de ritmo. Desde la energía del amanecer en el lakefront hasta el peso del anochecer en el sur, esta ciudad marca el tiempo distinto. Night Phantom nació dentro de ese pulso.",
+      "Más que una marca, es un universo: nacida de las sombras, inspirada en personajes de fuerza y valor, y arraigada en la convicción de que el cannabis premium debe sentirse como la ciudad de la que viene. Sin disculpas. Indomable. Con licencia en Illinois.",
+      "Tres espíritus. Tres efectos. Una sola identidad. Encuéntranos en estanterías — nunca en línea — porque algunas cosas merecen la búsqueda.",
+    ],
     ctaTitle: "Encuéntranos en Illinois",
     ctaCopy:
       "Disponible en dispensarios con licencia en estos mercados. No vendemos en línea — pide Night Phantom en tu dispensario.",

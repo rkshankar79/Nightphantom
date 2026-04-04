@@ -1269,6 +1269,15 @@ a.trinity-product-link:hover {
   max-width: 560px;
 }
 
+.np-story-body p {
+  line-height: 1.75;
+  margin: 0;
+}
+
+.np-story-body p + p {
+  margin-top: 1.35rem;
+}
+
 .section-label {
   font-family: var(--font-cinzel), serif;
   font-size: 0.65rem;

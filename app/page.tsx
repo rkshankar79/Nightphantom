@@ -59,7 +59,11 @@ export default async function Home() {
         <section className="np-section" id="story" style={{ background: "var(--np-ink)" }}>
           <p className="section-label">{h.storyLabel}</p>
           <h2>{h.storyTitle}</h2>
-          <p>{h.storyBody}</p>
+          <div className="np-story-body">
+            {h.storyParagraphs.map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
+            ))}
+          </div>
         </section>
 
         <section className="cta-section" id="stores" aria-labelledby="cta-heading">

@@ -103,53 +103,56 @@ export default async function CompliancePage() {
             </ul>
           </aside>
 
-          {sections.map((sec) => (
-            <section
-              key={sec.id}
-              id={sec.id}
-              className="compliance-section"
-              aria-labelledby={`compliance-${sec.id}-h2`}
-              tabIndex={-1}
-            >
-              <h2 id={`compliance-${sec.id}-h2`} className="compliance-section-title">
-                {sec.heading}
-              </h2>
+          {sections.map((sec) => {
+            const imgSrc = imageSrcById[sec.id];
+            return (
+              <section
+                key={sec.id}
+                id={sec.id}
+                className="compliance-section"
+                aria-labelledby={`compliance-${sec.id}-h2`}
+                tabIndex={-1}
+              >
+                <h2 id={`compliance-${sec.id}-h2`} className="compliance-section-title">
+                  {sec.heading}
+                </h2>
 
-              <div className="compliance-lang">
-                <h3 className="compliance-lang-label">{c.enLabel}</h3>
-                <div className="compliance-prose">{sec.en}</div>
-              </div>
+                <div className="compliance-lang">
+                  <h3 className="compliance-lang-label">{c.enLabel}</h3>
+                  <div className="compliance-prose">{sec.en}</div>
+                </div>
 
-              <div className="compliance-lang">
-                <h3 className="compliance-lang-label">{c.esLabel}</h3>
-                <div className="compliance-prose">{sec.es}</div>
-              </div>
+                <div className="compliance-lang">
+                  <h3 className="compliance-lang-label">{c.esLabel}</h3>
+                  <div className="compliance-prose">{sec.es}</div>
+                </div>
 
-              <figure className="compliance-figure">
-                {imageSrcById[sec.id] ? (
-                  <div className="compliance-image-frame">
-                    <Image
-                      src={imageSrcById[sec.id]}
-                      alt={imageAlt[sec.id]}
-                      width={1200}
-                      height={900}
-                      className="compliance-doc-img"
-                      sizes="(max-width: 900px) 100vw, 46rem"
+                <figure className="compliance-figure">
+                  {imgSrc ? (
+                    <div className="compliance-image-frame">
+                      <Image
+                        src={imgSrc}
+                        alt={imageAlt[sec.id]}
+                        width={1200}
+                        height={900}
+                        className="compliance-doc-img"
+                        sizes="(max-width: 900px) 100vw, 46rem"
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className="compliance-image-placeholder"
+                      role="img"
+                      aria-label={imageAlt[sec.id]}
                     />
-                  </div>
-                ) : (
-                  <div
-                    className="compliance-image-placeholder"
-                    role="img"
-                    aria-label={imageAlt[sec.id]}
-                  />
-                )}
-                <figcaption className="compliance-figcaption">
-                  {imageCaption[sec.id]}
-                </figcaption>
-              </figure>
-            </section>
-          ))}
+                  )}
+                  <figcaption className="compliance-figcaption">
+                    {imageCaption[sec.id]}
+                  </figcaption>
+                </figure>
+              </section>
+            );
+          })}
         </div>
 
         <SiteFooter home={h} />

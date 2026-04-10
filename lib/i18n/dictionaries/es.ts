@@ -106,7 +106,7 @@ export const es: Messages = {
     label: "Regulatorio",
     title: "Cumplimiento y pruebas de producto",
     intro:
-      "Usa los enlaces directos para códigos QR a cada sección. Sustituye las imágenes de ejemplo por certificados oficiales o COA de tu laboratorio.",
+      "Usa los enlaces directos para códigos QR a cada sección. Añade certificados oficiales o COA como archivos en public/compliance/ (nombres indicados bajo cada sección).",
     back: "← Inicio",
     qrHeading: "Enlaces para QR",
     qrLede: "Apunta los códigos QR a estas URLs para abrir cada formato en la sección correcta:",
@@ -115,9 +115,15 @@ export const es: Messages = {
     prerollShort: "Pre-roll",
     enLabel: "English",
     esLabel: "Español",
-    placeholderImageAria: "Marcador de posición para imagen de documentación de pruebas",
-    placeholderCaption:
-      "Marcador de posición — sube aquí el certificado de pruebas o COA oficial cuando esté disponible.",
+    vapeImageAlt: "Documentación de pruebas vape (COA / certificado de laboratorio)",
+    flowerImageAlt: "Documentación de pruebas flor (COA / certificado de laboratorio)",
+    prerollImageAlt: "Documentación de pruebas pre-roll (COA / certificado de laboratorio)",
+    vapeImageCaption:
+      "Añade el escaneo: public/compliance/vape.jpg, .jpeg, .png o .webp (mismo nombre base).",
+    flowerImageCaption:
+      "Añade el escaneo: public/compliance/flower.jpg, .jpeg, .png o .webp.",
+    prerollImageCaption:
+      "Añade el escaneo: public/compliance/preroll.jpg, .jpeg, .png o .webp.",
     vapeHeading: "Vape",
     vapeEn:
       "English copy for vape product testing and regulatory documentation will appear here. Include batch references, lab name, and dates as required by Illinois regulations.",

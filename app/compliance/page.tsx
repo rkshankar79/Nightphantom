@@ -1,7 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
+import { publicComplianceImagePath } from "@/lib/compliance-images";
 import { getLocale, getMessages } from "@/lib/i18n";
 import { absoluteUrl } from "@/lib/site";
 
@@ -55,6 +57,23 @@ export default async function CompliancePage() {
     { id: "preroll" as const, shortLabel: c.prerollShort },
   ];
 
+  const imageAlt = {
+    vape: c.vapeImageAlt,
+    flower: c.flowerImageAlt,
+    preroll: c.prerollImageAlt,
+  } as const;
+  const imageCaption = {
+    vape: c.vapeImageCaption,
+    flower: c.flowerImageCaption,
+    preroll: c.prerollImageCaption,
+  } as const;
+
+  const imageSrcById = {
+    vape: publicComplianceImagePath("vape"),
+    flower: publicComplianceImagePath("flower"),
+    preroll: publicComplianceImagePath("preroll"),
+  } as const;
+
   return (
     <>
       <SiteNav />
@@ -107,12 +126,27 @@ export default async function CompliancePage() {
               </div>
 
               <figure className="compliance-figure">
-                <div
-                  className="compliance-image-placeholder"
-                  role="img"
-                  aria-label={c.placeholderImageAria}
-                />
-                <figcaption className="compliance-figcaption">{c.placeholderCaption}</figcaption>
+                {imageSrcById[sec.id] ? (
+                  <div className="compliance-image-frame">
+                    <Image
+                      src={imageSrcById[sec.id]}
+                      alt={imageAlt[sec.id]}
+                      width={1200}
+                      height={900}
+                      className="compliance-doc-img"
+                      sizes="(max-width: 900px) 100vw, 46rem"
+                    />
+                  </div>
+                ) : (
+                  <div
+                    className="compliance-image-placeholder"
+                    role="img"
+                    aria-label={imageAlt[sec.id]}
+                  />
+                )}
+                <figcaption className="compliance-figcaption">
+                  {imageCaption[sec.id]}
+                </figcaption>
               </figure>
             </section>
           ))}

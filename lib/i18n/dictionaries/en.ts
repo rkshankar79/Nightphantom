@@ -106,7 +106,7 @@ export const en: Messages = {
     label: "Regulatory",
     title: "Compliance & product testing",
     intro:
-      "Use the direct links below for QR codes to each section. Replace placeholder images with official lab certificates or COAs as provided by your testing facility.",
+      "Use the direct links below for QR codes to each section. Add official lab certificates or COAs as image files under public/compliance/ (see filenames below each section).",
     back: "← Home",
     qrHeading: "QR / deep links",
     qrLede:
@@ -116,9 +116,15 @@ export const en: Messages = {
     prerollShort: "Pre-roll",
     enLabel: "English",
     esLabel: "Español",
-    placeholderImageAria: "Placeholder for product testing documentation image",
-    placeholderCaption:
-      "Placeholder — upload official testing certificate or COA image here when available.",
+    vapeImageAlt: "Vape product testing documentation (COA / lab certificate)",
+    flowerImageAlt: "Flower product testing documentation (COA / lab certificate)",
+    prerollImageAlt: "Pre-roll product testing documentation (COA / lab certificate)",
+    vapeImageCaption:
+      "Add a scan: public/compliance/vape.jpg, .jpeg, .png, or .webp (same base name).",
+    flowerImageCaption:
+      "Add a scan: public/compliance/flower.jpg, .jpeg, .png, or .webp.",
+    prerollImageCaption:
+      "Add a scan: public/compliance/preroll.jpg, .jpeg, .png, or .webp.",
     vapeHeading: "Vape",
     vapeEn:
       "English copy for vape product testing and regulatory documentation will appear here. Include batch references, lab name, and dates as required by Illinois regulations.",

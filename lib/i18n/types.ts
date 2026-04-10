@@ -82,8 +82,14 @@ export type Messages = {
     prerollShort: string;
     enLabel: string;
     esLabel: string;
-    placeholderImageAria: string;
-    placeholderCaption: string;
+    /** Alt text for the testing-doc image under Vape */
+    vapeImageAlt: string;
+    flowerImageAlt: string;
+    prerollImageAlt: string;
+    /** Visible caption under each image (e.g. COA reference) */
+    vapeImageCaption: string;
+    flowerImageCaption: string;
+    prerollImageCaption: string;
     vapeHeading: string;
     vapeEn: string;
     vapeEs: string;

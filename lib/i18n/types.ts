@@ -73,7 +73,6 @@ export type Messages = {
     metaDescription: string;
     label: string;
     title: string;
-    intro: string;
     back: string;
     qrHeading: string;
     qrLede: string;

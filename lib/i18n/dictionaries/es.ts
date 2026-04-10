@@ -105,8 +105,6 @@ export const es: Messages = {
       "Documentación regulatoria y de pruebas por formato: vape, flor y pre-roll. Uso para cumplimiento en Illinois.",
     label: "Regulatorio",
     title: "Cumplimiento y pruebas de producto",
-    intro:
-      "Los enlaces QR están al final. Imágenes en public/compliance/: vape, preroll y flor (flower1 primero, luego flower).",
     back: "← Inicio",
     qrHeading: "Enlaces para QR",
     qrLede: "Apunta los códigos QR a estas URLs para abrir cada formato en la sección correcta:",

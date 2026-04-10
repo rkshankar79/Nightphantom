@@ -105,8 +105,6 @@ export const en: Messages = {
       "Product testing and regulatory documentation by format: vape, flower, and pre-roll. For licensed Illinois cannabis compliance use.",
     label: "Regulatory",
     title: "Compliance & product testing",
-    intro:
-      "Use the QR links at the bottom for each section. Images load from public/compliance/: vape, preroll, and flower (flower1 first, then flower).",
     back: "← Home",
     qrHeading: "QR / deep links",
     qrLede:

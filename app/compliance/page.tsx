@@ -73,7 +73,6 @@ export default async function CompliancePage() {
           </Link>
           <p className="section-label">{c.label}</p>
           <h1 className="compliance-title">{c.title}</h1>
-          <p className="compliance-intro">{c.intro}</p>
 
           {sections.map((sec) => {
             const imgSrcs = imageSrcsById[sec.id];

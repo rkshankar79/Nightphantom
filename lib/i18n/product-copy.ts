@@ -1,3 +1,4 @@
+import type { PortableTextBlock } from "next-sanity";
 import type { Locale } from "@/lib/i18n/types";
 import type { ProductDetail, TrinityProductLine } from "@/lib/sanity/fetch";
 
@@ -30,15 +31,13 @@ export function pickShortDescription(
 }
 
 /** Rich text: use Spanish body when locale is es and blocks exist. */
-export function pickProductBody(p: ProductDetail, locale: Locale): unknown | undefined {
-  if (
-    locale === "es" &&
-    p.bodyEs &&
-    Array.isArray(p.bodyEs) &&
-    p.bodyEs.length > 0
-  ) {
+export function pickProductBody(
+  p: ProductDetail,
+  locale: Locale,
+): PortableTextBlock[] | undefined {
+  if (locale === "es" && p.bodyEs && p.bodyEs.length > 0) {
     return p.bodyEs;
   }
-  if (p.body && Array.isArray(p.body) && p.body.length > 0) return p.body;
+  if (p.body && p.body.length > 0) return p.body;
   return undefined;
 }

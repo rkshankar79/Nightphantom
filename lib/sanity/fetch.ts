@@ -1,3 +1,4 @@
+import type { PortableTextBlock } from "next-sanity";
 import { getSanityClient } from "@/lib/sanity/client";
 import {
   productBySlugQuery,
@@ -41,9 +42,9 @@ export type ProductDetail = {
   listingLabelEs?: string;
   shortDescription?: string;
   shortDescriptionEs?: string;
-  body?: unknown;
+  body?: PortableTextBlock[];
   /** Spanish portable text; used when site language is ES */
-  bodyEs?: unknown;
+  bodyEs?: PortableTextBlock[];
   thcDisplay?: string;
   coaUrl?: string;
   images?: Array<{

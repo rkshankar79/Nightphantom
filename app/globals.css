@@ -1716,31 +1716,11 @@ a.trinity-product-link:hover {
 .compliance-section-title {
   font-family: var(--font-cinzel), serif;
   font-size: 1.45rem;
-  margin: 0 0 1.25rem;
-}
-
-.compliance-lang {
-  margin-bottom: 1.35rem;
-}
-
-.compliance-lang-label {
-  font-size: 0.65rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--np-gold-dim);
-  margin: 0 0 0.5rem;
-  font-weight: 600;
-}
-
-.compliance-prose {
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: var(--np-text-muted);
-  white-space: pre-line;
+  margin: 0 0 1rem;
 }
 
 .compliance-figure {
-  margin: 1.5rem 0 0;
+  margin: 0;
 }
 
 .compliance-image-frame {
@@ -1771,13 +1751,6 @@ a.trinity-product-link:hover {
     rgba(12, 12, 22, 0.95) 100%
   );
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
-}
-
-.compliance-figcaption {
-  margin: 0.65rem 0 0;
-  font-size: 0.78rem;
-  color: var(--np-text-dim);
-  line-height: 1.45;
 }
 
 /* Product detail */

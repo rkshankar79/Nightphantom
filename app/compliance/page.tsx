@@ -31,24 +31,9 @@ export default async function CompliancePage() {
   const h = t.home;
 
   const sections = [
-    {
-      id: "vape" as const,
-      heading: c.vapeHeading,
-      en: c.vapeEn,
-      es: c.vapeEs,
-    },
-    {
-      id: "flower" as const,
-      heading: c.flowerHeading,
-      en: c.flowerEn,
-      es: c.flowerEs,
-    },
-    {
-      id: "preroll" as const,
-      heading: c.prerollHeading,
-      en: c.prerollEn,
-      es: c.prerollEs,
-    },
+    { id: "vape" as const, heading: c.vapeHeading },
+    { id: "flower" as const, heading: c.flowerHeading },
+    { id: "preroll" as const, heading: c.prerollHeading },
   ];
 
   const qrRows = [
@@ -62,12 +47,6 @@ export default async function CompliancePage() {
     flower: c.flowerImageAlt,
     preroll: c.prerollImageAlt,
   } as const;
-  const imageCaption = {
-    vape: c.vapeImageCaption,
-    flower: c.flowerImageCaption,
-    preroll: c.prerollImageCaption,
-  } as const;
-
   const imageSrcById = {
     vape: publicComplianceImagePath("vape"),
     flower: publicComplianceImagePath("flower"),
@@ -117,17 +96,7 @@ export default async function CompliancePage() {
                   {sec.heading}
                 </h2>
 
-                <div className="compliance-lang">
-                  <h3 className="compliance-lang-label">{c.enLabel}</h3>
-                  <div className="compliance-prose">{sec.en}</div>
-                </div>
-
-                <div className="compliance-lang">
-                  <h3 className="compliance-lang-label">{c.esLabel}</h3>
-                  <div className="compliance-prose">{sec.es}</div>
-                </div>
-
-                <figure className="compliance-figure">
+                <div className="compliance-figure">
                   {imgSrc ? (
                     <div className="compliance-image-frame">
                       <Image
@@ -146,10 +115,7 @@ export default async function CompliancePage() {
                       aria-label={imageAlt[sec.id]}
                     />
                   )}
-                  <figcaption className="compliance-figcaption">
-                    {imageCaption[sec.id]}
-                  </figcaption>
-                </figure>
+                </div>
               </section>
             );
           })}

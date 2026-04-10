@@ -106,39 +106,19 @@ export const es: Messages = {
     label: "Regulatorio",
     title: "Cumplimiento y pruebas de producto",
     intro:
-      "Usa los enlaces directos para códigos QR a cada sección. Añade certificados oficiales o COA como archivos en public/compliance/ (nombres indicados bajo cada sección).",
+      "Usa los enlaces directos para códigos QR a cada sección. Las imágenes se cargan desde public/compliance/ (vape, flower, preroll).",
     back: "← Inicio",
     qrHeading: "Enlaces para QR",
     qrLede: "Apunta los códigos QR a estas URLs para abrir cada formato en la sección correcta:",
     vapeShort: "Vape",
     flowerShort: "Flor",
     prerollShort: "Pre-roll",
-    enLabel: "English",
-    esLabel: "Español",
     vapeImageAlt: "Documentación de pruebas vape (COA / certificado de laboratorio)",
     flowerImageAlt: "Documentación de pruebas flor (COA / certificado de laboratorio)",
     prerollImageAlt: "Documentación de pruebas pre-roll (COA / certificado de laboratorio)",
-    vapeImageCaption:
-      "Añade el escaneo: public/compliance/vape.jpg, .jpeg, .png o .webp (mismo nombre base).",
-    flowerImageCaption:
-      "Añade el escaneo: public/compliance/flower.jpg, .jpeg, .png o .webp.",
-    prerollImageCaption:
-      "Añade el escaneo: public/compliance/preroll.jpg, .jpeg, .png o .webp.",
     vapeHeading: "Vape",
-    vapeEn:
-      "English copy for vape product testing and regulatory documentation will appear here. Include batch references, lab name, and dates as required by Illinois regulations.",
-    vapeEs:
-      "El texto en español para pruebas de producto vape y documentación regulatoria aparecerá aquí. Incluya referencias de lote, laboratorio y fechas según aplique.",
     flowerHeading: "Flor",
-    flowerEn:
-      "English copy for flower product testing and regulatory documentation will appear here.",
-    flowerEs:
-      "El texto en español para pruebas de producto flor y documentación regulatoria aparecerá aquí.",
     prerollHeading: "Pre-roll",
-    prerollEn:
-      "English copy for pre-roll product testing and regulatory documentation will appear here.",
-    prerollEs:
-      "El texto en español para pruebas de producto pre-roll y documentación regulatoria aparecerá aquí.",
   },
   contact: {
     metaTitle: "Contacto — Night Phantom",

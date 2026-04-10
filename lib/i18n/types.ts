@@ -80,25 +80,13 @@ export type Messages = {
     vapeShort: string;
     flowerShort: string;
     prerollShort: string;
-    enLabel: string;
-    esLabel: string;
-    /** Alt text for the testing-doc image under Vape */
+    /** Alt text for the testing-doc image per section */
     vapeImageAlt: string;
     flowerImageAlt: string;
     prerollImageAlt: string;
-    /** Visible caption under each image (e.g. COA reference) */
-    vapeImageCaption: string;
-    flowerImageCaption: string;
-    prerollImageCaption: string;
     vapeHeading: string;
-    vapeEn: string;
-    vapeEs: string;
     flowerHeading: string;
-    flowerEn: string;
-    flowerEs: string;
     prerollHeading: string;
-    prerollEn: string;
-    prerollEs: string;
   };
   contact: {
     metaTitle: string;

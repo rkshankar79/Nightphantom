@@ -106,7 +106,7 @@ export const es: Messages = {
     label: "Regulatorio",
     title: "Cumplimiento y pruebas de producto",
     intro:
-      "Usa los enlaces directos para códigos QR a cada sección. Las imágenes se cargan desde public/compliance/ (vape, flower, preroll).",
+      "Los enlaces QR están al final. Imágenes en public/compliance/: vape, preroll y flor (flower1 primero, luego flower).",
     back: "← Inicio",
     qrHeading: "Enlaces para QR",
     qrLede: "Apunta los códigos QR a estas URLs para abrir cada formato en la sección correcta:",
@@ -114,7 +114,8 @@ export const es: Messages = {
     flowerShort: "Flor",
     prerollShort: "Pre-roll",
     vapeImageAlt: "Documentación de pruebas vape (COA / certificado de laboratorio)",
-    flowerImageAlt: "Documentación de pruebas flor (COA / certificado de laboratorio)",
+    flowerImageAlt1: "Documentación de pruebas flor — página 1",
+    flowerImageAlt: "Documentación de pruebas flor — página 2",
     prerollImageAlt: "Documentación de pruebas pre-roll (COA / certificado de laboratorio)",
     vapeHeading: "Vape",
     flowerHeading: "Flor",

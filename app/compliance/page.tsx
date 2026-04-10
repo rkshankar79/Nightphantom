@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
-import { publicComplianceImagePath } from "@/lib/compliance-images";
+import { publicComplianceImages } from "@/lib/compliance-images";
 import { getLocale, getMessages } from "@/lib/i18n";
 import { absoluteUrl } from "@/lib/site";
 
@@ -42,16 +42,26 @@ export default async function CompliancePage() {
     { id: "preroll" as const, shortLabel: c.prerollShort },
   ];
 
-  const imageAlt = {
-    vape: c.vapeImageAlt,
-    flower: c.flowerImageAlt,
-    preroll: c.prerollImageAlt,
+  const imageSrcsById = {
+    vape: publicComplianceImages("vape"),
+    flower: publicComplianceImages("flower"),
+    preroll: publicComplianceImages("preroll"),
   } as const;
-  const imageSrcById = {
-    vape: publicComplianceImagePath("vape"),
-    flower: publicComplianceImagePath("flower"),
-    preroll: publicComplianceImagePath("preroll"),
-  } as const;
+
+  function altForComplianceImage(
+    secId: (typeof sections)[number]["id"],
+    src: string,
+  ): string {
+    if (secId === "flower") {
+      return src.includes("flower1") ? c.flowerImageAlt1 : c.flowerImageAlt;
+    }
+    return secId === "vape" ? c.vapeImageAlt : c.prerollImageAlt;
+  }
+
+  function placeholderAria(secId: (typeof sections)[number]["id"]): string {
+    if (secId === "flower") return c.flowerImageAlt1;
+    return secId === "vape" ? c.vapeImageAlt : c.prerollImageAlt;
+  }
 
   return (
     <>
@@ -64,6 +74,51 @@ export default async function CompliancePage() {
           <p className="section-label">{c.label}</p>
           <h1 className="compliance-title">{c.title}</h1>
           <p className="compliance-intro">{c.intro}</p>
+
+          {sections.map((sec) => {
+            const imgSrcs = imageSrcsById[sec.id];
+            return (
+              <section
+                key={sec.id}
+                id={sec.id}
+                className="compliance-section"
+                aria-labelledby={`compliance-${sec.id}-h2`}
+                tabIndex={-1}
+              >
+                <h2 id={`compliance-${sec.id}-h2`} className="compliance-section-title">
+                  {sec.heading}
+                </h2>
+
+                <div className="compliance-figure">
+                  {imgSrcs.length > 0 ? (
+                    imgSrcs.map((src, i) => (
+                      <div
+                        key={`${sec.id}-${i}`}
+                        className={
+                          i > 0 ? "compliance-image-frame compliance-image-frame--stacked" : "compliance-image-frame"
+                        }
+                      >
+                        <Image
+                          src={src}
+                          alt={altForComplianceImage(sec.id, src)}
+                          width={1200}
+                          height={900}
+                          className="compliance-doc-img"
+                          sizes="(max-width: 900px) 100vw, 46rem"
+                        />
+                      </div>
+                    ))
+                  ) : (
+                    <div
+                      className="compliance-image-placeholder"
+                      role="img"
+                      aria-label={placeholderAria(sec.id)}
+                    />
+                  )}
+                </div>
+              </section>
+            );
+          })}
 
           <aside className="compliance-qr-panel" aria-labelledby="compliance-qr-heading">
             <h2 id="compliance-qr-heading" className="compliance-qr-heading">
@@ -81,44 +136,6 @@ export default async function CompliancePage() {
               ))}
             </ul>
           </aside>
-
-          {sections.map((sec) => {
-            const imgSrc = imageSrcById[sec.id];
-            return (
-              <section
-                key={sec.id}
-                id={sec.id}
-                className="compliance-section"
-                aria-labelledby={`compliance-${sec.id}-h2`}
-                tabIndex={-1}
-              >
-                <h2 id={`compliance-${sec.id}-h2`} className="compliance-section-title">
-                  {sec.heading}
-                </h2>
-
-                <div className="compliance-figure">
-                  {imgSrc ? (
-                    <div className="compliance-image-frame">
-                      <Image
-                        src={imgSrc}
-                        alt={imageAlt[sec.id]}
-                        width={1200}
-                        height={900}
-                        className="compliance-doc-img"
-                        sizes="(max-width: 900px) 100vw, 46rem"
-                      />
-                    </div>
-                  ) : (
-                    <div
-                      className="compliance-image-placeholder"
-                      role="img"
-                      aria-label={imageAlt[sec.id]}
-                    />
-                  )}
-                </div>
-              </section>
-            );
-          })}
         </div>
 
         <SiteFooter home={h} />

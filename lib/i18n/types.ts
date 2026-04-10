@@ -82,6 +82,9 @@ export type Messages = {
     prerollShort: string;
     /** Alt text for the testing-doc image per section */
     vapeImageAlt: string;
+    /** First flower image (flower1.*) */
+    flowerImageAlt1: string;
+    /** Second flower image (flower.*) */
     flowerImageAlt: string;
     prerollImageAlt: string;
     vapeHeading: string;

@@ -7,9 +7,15 @@ export const product = defineType({
   fields: [
     defineField({
       name: "title",
-      title: "Title",
+      title: "Title (English)",
       type: "string",
       validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: "titleEs",
+      title: "Title (Spanish)",
+      description: "Optional. Shown when the site language is Spanish.",
+      type: "string",
     }),
     defineField({
       name: "slug",
@@ -48,20 +54,39 @@ export const product = defineType({
     }),
     defineField({
       name: "listingLabel",
-      title: "Trinity list label",
+      title: "Trinity list label (English)",
       description: "Short line under the card, e.g. “Dawn flower”",
       type: "string",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "listingLabelEs",
+      title: "Trinity list label (Spanish)",
+      description: "Optional. Shown in Spanish on home Trinity cards.",
+      type: "string",
+    }),
+    defineField({
       name: "shortDescription",
-      title: "Short description",
+      title: "Short description (English)",
+      type: "text",
+      rows: 3,
+    }),
+    defineField({
+      name: "shortDescriptionEs",
+      title: "Short description (Spanish)",
       type: "text",
       rows: 3,
     }),
     defineField({
       name: "body",
-      title: "Full story",
+      title: "Full story (English)",
+      type: "array",
+      of: [{ type: "block" }],
+    }),
+    defineField({
+      name: "bodyEs",
+      title: "Full story (Spanish)",
+      description: "Optional. Shown when the site language is Spanish.",
       type: "array",
       of: [{ type: "block" }],
     }),

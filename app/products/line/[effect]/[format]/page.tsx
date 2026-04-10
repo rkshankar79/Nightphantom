@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { PoweredBy } from "@/components/powered-by";
 import { SiteNav } from "@/components/site-nav";
 import { getLocale, getMessages } from "@/lib/i18n";
+import { pickProductTitle } from "@/lib/i18n/product-copy";
 import { getProductsByLine, getTrinityProducts } from "@/lib/sanity/fetch";
 import type { TrinityPowerId } from "@/lib/sanity/types";
 
@@ -89,7 +90,7 @@ export default async function ProductLinePage({ params }: Props) {
             {products.map((item) => (
               <li key={item._id}>
                 <Link href={`/products/${item.slug}`} className="product-line-title-link">
-                  {item.title}
+                  {pickProductTitle(item, locale)}
                 </Link>
               </li>
             ))}

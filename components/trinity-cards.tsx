@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useCallback, useId, useState } from "react";
 import { useLocale } from "@/components/locale-context";
+import { pickListingLabel } from "@/lib/i18n/product-copy";
 import type { Messages } from "@/lib/i18n/types";
 import type { TrinitySkuRow } from "@/lib/sanity/group-products";
 import type { TrinityPowerId } from "@/lib/sanity/types";
@@ -22,7 +23,7 @@ function formatLineWord(format: string, pm: Messages["product"]): string {
 }
 
 export function TrinityCards({ skuRowsByEffect }: Props) {
-  const { messages: t } = useLocale();
+  const { locale, messages: t } = useLocale();
   const [openId, setOpenId] = useState<TrinityPowerId | null>(null);
   const sectionLabelId = useId();
   const tr = t.trinity;
@@ -96,7 +97,7 @@ export function TrinityCards({ skuRowsByEffect }: Props) {
                                   className="trinity-product-link"
                                   onClick={(e) => e.stopPropagation()}
                                 >
-                                  {item.listingLabel}
+                                  {pickListingLabel(item, locale)}
                                 </Link>
                               </li>
                             );

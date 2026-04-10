@@ -7,6 +7,12 @@ import { PoweredBy } from "@/components/powered-by";
 import { SiteNav } from "@/components/site-nav";
 import { getProductBySlug, getTrinityProducts } from "@/lib/sanity/fetch";
 import { getLocale, getMessages } from "@/lib/i18n";
+import {
+  pickProductBody,
+  pickProductTitle,
+  pickShortDescription,
+  pickListingLabel,
+} from "@/lib/i18n/product-copy";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -22,14 +28,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const locale = await getLocale();
     return { title: locale === "es" ? "Producto" : "Product" };
   }
-  const desc = product.shortDescription || product.listingLabel;
+  const locale = await getLocale();
+  const displayTitle = pickProductTitle(product, locale);
+  const desc =
+    pickShortDescription(product, locale) ||
+    pickListingLabel(product, locale);
   const path = `/products/${slug}`;
   return {
-    title: `${product.title} — Night Phantom`,
+    title: `${displayTitle} — Night Phantom`,
     description: desc,
     alternates: { canonical: path },
     openGraph: {
-      title: `${product.title} — Night Phantom`,
+      title: `${displayTitle} — Night Phantom`,
       description: desc,
       type: "website",
       url: path,
@@ -53,6 +63,10 @@ export default async function ProductPage({ params }: Props) {
         ? p.formatVape
         : p.formatFlower;
 
+  const displayTitle = pickProductTitle(product, locale);
+  const displayShort = pickShortDescription(product, locale);
+  const bodyContent = pickProductBody(product, locale);
+
   return (
     <>
       <SiteNav />
@@ -62,14 +76,14 @@ export default async function ProductPage({ params }: Props) {
             {p.back}
           </Link>
           <p className="section-label">{formatLabel}</p>
-          <h1 className="product-title">{product.title}</h1>
+          <h1 className="product-title">{displayTitle}</h1>
           {product.thcDisplay ? (
             <p className="product-meta">
               {p.thcPrefix} {product.thcDisplay}
             </p>
           ) : null}
-          {product.shortDescription ? (
-            <p className="product-lede">{product.shortDescription}</p>
+          {displayShort ? (
+            <p className="product-lede">{displayShort}</p>
           ) : null}
 
           {product.format === "vape" ? (
@@ -89,7 +103,7 @@ export default async function ProductPage({ params }: Props) {
                   <Image
                     key={img._key || url + i}
                     src={url}
-                    alt={img.alt || product.title}
+                    alt={img.alt || displayTitle}
                     width={Math.min(w, 1100)}
                     height={Math.min(h, 1100)}
                     className="product-gallery-img"
@@ -100,9 +114,9 @@ export default async function ProductPage({ params }: Props) {
             </div>
           ) : null}
 
-          {product.body && Array.isArray(product.body) && product.body.length > 0 ? (
+          {bodyContent ? (
             <div className="product-body">
-              <PortableText value={product.body} />
+              <PortableText value={bodyContent} />
             </div>
           ) : null}
 

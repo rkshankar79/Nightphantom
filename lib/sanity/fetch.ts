@@ -8,10 +8,14 @@ import {
 export type TrinityProductLine = {
   _id: string;
   title: string;
+  /** Optional Spanish title; used when site language is ES */
+  titleEs?: string;
   slug: string;
   effect: string;
   format: string;
   listingLabel: string;
+  /** Optional Spanish label for Trinity list links */
+  listingLabelEs?: string;
   shortDescription?: string;
 };
 
@@ -29,12 +33,17 @@ export async function getTrinityProducts(): Promise<TrinityProductLine[]> {
 export type ProductDetail = {
   _id: string;
   title: string;
+  titleEs?: string;
   slug: string;
   effect: string;
   format: string;
   listingLabel: string;
+  listingLabelEs?: string;
   shortDescription?: string;
+  shortDescriptionEs?: string;
   body?: unknown;
+  /** Spanish portable text; used when site language is ES */
+  bodyEs?: unknown;
   thcDisplay?: string;
   coaUrl?: string;
   images?: Array<{

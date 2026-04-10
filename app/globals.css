@@ -1547,6 +1547,18 @@ a.trinity-product-link:hover {
   margin: 0;
 }
 
+.np-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.65rem;
+}
+
+.np-footer-sep {
+  opacity: 0.4;
+  user-select: none;
+}
+
 .np-footer p {
   font-size: 0.75rem;
   color: var(--np-text-dim);
@@ -1575,6 +1587,181 @@ a.trinity-product-link:hover {
   color: var(--np-text-dim);
   max-width: 400px;
   line-height: 1.5;
+}
+
+/* Compliance */
+.compliance-page {
+  min-height: 100vh;
+  padding-top: 4.5rem;
+  background: var(--np-ink);
+  color: var(--np-text);
+}
+
+.compliance-inner {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+.compliance-back {
+  display: inline-block;
+  font-family: var(--font-cinzel), serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(196, 181, 253, 0.8);
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+}
+
+.compliance-back:hover {
+  color: #e0e7ff;
+}
+
+.compliance-title {
+  font-family: var(--font-cinzel), serif;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin: 0 0 1rem;
+  line-height: 1.2;
+}
+
+.compliance-intro {
+  color: var(--np-text-muted);
+  line-height: 1.65;
+  margin: 0 0 2rem;
+  max-width: 40rem;
+}
+
+.compliance-qr-panel {
+  margin-bottom: 3rem;
+  padding: 1.25rem 1.35rem;
+  border-radius: 12px;
+  border: 1px solid rgba(196, 181, 253, 0.18);
+  background: rgba(10, 10, 20, 0.65);
+}
+
+.compliance-qr-heading {
+  font-family: var(--font-cinzel), serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.06em;
+}
+
+.compliance-qr-lede {
+  font-size: 0.85rem;
+  color: var(--np-text-muted);
+  margin: 0 0 1rem;
+  line-height: 1.5;
+}
+
+.compliance-qr-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.compliance-qr-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+@media (min-width: 520px) {
+  .compliance-qr-list li {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  .compliance-qr-format {
+    flex: 0 0 5.5rem;
+  }
+}
+
+.compliance-qr-format {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--np-gold);
+}
+
+.compliance-qr-url {
+  font-size: 0.72rem;
+  word-break: break-all;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(224, 231, 255, 0.92);
+}
+
+.compliance-section {
+  scroll-margin-top: 5.5rem;
+  padding-top: 2rem;
+  margin-bottom: 2.5rem;
+  border-top: 1px solid rgba(196, 181, 253, 0.12);
+}
+
+.compliance-section:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.compliance-section-title {
+  font-family: var(--font-cinzel), serif;
+  font-size: 1.45rem;
+  margin: 0 0 1.25rem;
+}
+
+.compliance-lang {
+  margin-bottom: 1.35rem;
+}
+
+.compliance-lang-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--np-gold-dim);
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+}
+
+.compliance-prose {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--np-text-muted);
+  white-space: pre-line;
+}
+
+.compliance-figure {
+  margin: 1.5rem 0 0;
+}
+
+.compliance-image-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  max-height: 320px;
+  border-radius: 10px;
+  border: 2px dashed rgba(196, 181, 253, 0.28);
+  background: linear-gradient(
+    145deg,
+    rgba(30, 27, 50, 0.9) 0%,
+    rgba(12, 12, 22, 0.95) 100%
+  );
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.compliance-figcaption {
+  margin: 0.65rem 0 0;
+  font-size: 0.78rem;
+  color: var(--np-text-dim);
+  line-height: 1.45;
 }
 
 /* Product detail */
@@ -1830,6 +2017,10 @@ a.trinity-product-link:hover {
 
 .contact-privacy-wrap {
   margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.65rem;
 }
 
 /* Privacy policy */

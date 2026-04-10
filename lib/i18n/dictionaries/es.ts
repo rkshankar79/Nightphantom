@@ -97,6 +97,42 @@ export const es: Messages = {
     footerDisclaimer:
       "Solo para adultos de 21 años o más. Mantén fuera del alcance de los niños. El cannabis puede afectar la concentración, la coordinación y el juicio.",
     privacyLink: "Política de privacidad",
+    complianceLink: "Cumplimiento",
+  },
+  compliance: {
+    metaTitle: "Cumplimiento — Night Phantom",
+    metaDescription:
+      "Documentación regulatoria y de pruebas por formato: vape, flor y pre-roll. Uso para cumplimiento en Illinois.",
+    label: "Regulatorio",
+    title: "Cumplimiento y pruebas de producto",
+    intro:
+      "Usa los enlaces directos para códigos QR a cada sección. Sustituye las imágenes de ejemplo por certificados oficiales o COA de tu laboratorio.",
+    back: "← Inicio",
+    qrHeading: "Enlaces para QR",
+    qrLede: "Apunta los códigos QR a estas URLs para abrir cada formato en la sección correcta:",
+    vapeShort: "Vape",
+    flowerShort: "Flor",
+    prerollShort: "Pre-roll",
+    enLabel: "English",
+    esLabel: "Español",
+    placeholderImageAria: "Marcador de posición para imagen de documentación de pruebas",
+    placeholderCaption:
+      "Marcador de posición — sube aquí el certificado de pruebas o COA oficial cuando esté disponible.",
+    vapeHeading: "Vape",
+    vapeEn:
+      "English copy for vape product testing and regulatory documentation will appear here. Include batch references, lab name, and dates as required by Illinois regulations.",
+    vapeEs:
+      "El texto en español para pruebas de producto vape y documentación regulatoria aparecerá aquí. Incluya referencias de lote, laboratorio y fechas según aplique.",
+    flowerHeading: "Flor",
+    flowerEn:
+      "English copy for flower product testing and regulatory documentation will appear here.",
+    flowerEs:
+      "El texto en español para pruebas de producto flor y documentación regulatoria aparecerá aquí.",
+    prerollHeading: "Pre-roll",
+    prerollEn:
+      "English copy for pre-roll product testing and regulatory documentation will appear here.",
+    prerollEs:
+      "El texto en español para pruebas de producto pre-roll y documentación regulatoria aparecerá aquí.",
   },
   contact: {
     metaTitle: "Contacto — Night Phantom",

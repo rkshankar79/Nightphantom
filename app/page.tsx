@@ -10,7 +10,7 @@ import {
   groupProductsByEffect,
   rowsByEffectForTrinity,
 } from "@/lib/sanity/group-products";
-import { PoweredBy } from "@/components/powered-by";
+import { SiteFooter } from "@/components/site-footer";
 import { QuoteRotator } from "@/components/quote-rotator";
 import { getLocale, getMessages } from "@/lib/i18n";
 import { NP_INFO_EMAIL, NP_INFO_MAILTO } from "@/lib/site-contact";
@@ -105,18 +105,7 @@ export default async function Home() {
           </Link>
         </section>
 
-        <footer className="np-footer">
-          <div className="np-footer-left">
-            <p>
-              © {new Date().getFullYear()} {h.footerRights}
-            </p>
-            <Link className="footer-privacy-link" href="/privacy">
-              {h.privacyLink}
-            </Link>
-          </div>
-          <p className="footer-disclaimer">{h.footerDisclaimer}</p>
-          <PoweredBy />
-        </footer>
+        <SiteFooter home={h} />
       </main>
     </>
   );

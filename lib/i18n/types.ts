@@ -66,6 +66,33 @@ export type Messages = {
     footerRights: string;
     footerDisclaimer: string;
     privacyLink: string;
+    complianceLink: string;
+  };
+  compliance: {
+    metaTitle: string;
+    metaDescription: string;
+    label: string;
+    title: string;
+    intro: string;
+    back: string;
+    qrHeading: string;
+    qrLede: string;
+    vapeShort: string;
+    flowerShort: string;
+    prerollShort: string;
+    enLabel: string;
+    esLabel: string;
+    placeholderImageAria: string;
+    placeholderCaption: string;
+    vapeHeading: string;
+    vapeEn: string;
+    vapeEs: string;
+    flowerHeading: string;
+    flowerEn: string;
+    flowerEs: string;
+    prerollHeading: string;
+    prerollEn: string;
+    prerollEs: string;
   };
   contact: {
     metaTitle: string;

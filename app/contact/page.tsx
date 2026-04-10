@@ -77,6 +77,12 @@ export default async function ContactPage() {
             <Link className="footer-privacy-link" href="/privacy">
               {t.home.privacyLink}
             </Link>
+            <span className="np-footer-sep" aria-hidden>
+              ·
+            </span>
+            <Link className="footer-privacy-link" href="/compliance">
+              {t.home.complianceLink}
+            </Link>
           </p>
           <PoweredBy />
         </div>
